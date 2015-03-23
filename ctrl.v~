@@ -1,5 +1,4 @@
-// 55:035 Porject - Group 22
-// Jacob Dye, Matt Fina
+
 // finite state machine
 
 `timescale 1ns/100ps
