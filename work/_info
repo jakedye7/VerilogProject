@@ -1,0 +1,122 @@
+m255
+K3
+13
+cModel Technology
+Z0 d/user/m/mfina/carch/VerilogProject
+valu
+VNA1>;Mi60:AcG`J2UHITS3
+r1
+31
+Iz`4:U3BT3=BNfL2cMNM1`1
+Z1 w1427142366
+8alu.v
+Falu.v
+L0 6
+Z2 OL;L;6.5b_1;42
+Z3 o-L mtiAvm -L mtiOvm -L mtiUPF
+!s85 0
+!s100 f0jEFRFHcN?9fP4Y]FOGc0
+vctrl
+VE<LSRNSVXogTm2TMnZacn2
+r1
+31
+I]fWY9mDB>m6<U=SHm0<lH0
+w1427408799
+8ctrl.v
+Fctrl.v
+L0 7
+R2
+R3
+!s85 0
+!s100 dUhfHLVH=4O`cC?PiiL6c0
+vmux32
+V?;CBec=T[U91gU:7cGkUC3
+r1
+31
+IC]cBZ:925CO8NnYkfWaV`3
+R1
+8mux32.v
+Fmux32.v
+L0 6
+R2
+R3
+!s85 0
+!s100 zDJ8eC?lHGj_0e_=12iN]1
+vmux4
+Vh083iXmMf2[Bllg9dlXT>3
+r1
+31
+Ih;cEON7FEF57`FTb4]lc<0
+R1
+8mux4.v
+Fmux4.v
+L0 6
+R2
+R3
+!s85 0
+!s100 U?]6M6Xao@4ZW<D`TG[GM2
+vrf
+Vf6EFI85]z:>XS7CHN=oz`0
+r1
+31
+I]kBOGhT;D:9eUX_VcJOdR2
+R1
+8rf.v
+Frf.v
+L0 6
+R2
+R3
+!s85 0
+!s100 8f_^IPHa]Qi_2CgPP_foo0
+vsisc
+V33z^=4W00XnWaj:g1N^XK3
+r1
+31
+I=f[UcY;U>5Kg2JMgBnLHF1
+w1427407724
+8sisc.v
+Fsisc.v
+L0 6
+R2
+R3
+!s85 0
+!s100 UBKYYCb6:CUZZO6B;zf6K1
+vsisc_tb
+VG@blPFYUiZ4NCCR^;;[<=0
+r1
+31
+ISedOb6O11HGTCGOT0lJdj2
+Z4 w1427409357
+Z5 8sisc_tb.v
+Z6 Fsisc_tb.v
+L0 6
+R2
+R3
+!s85 0
+!s100 C:oe57FNE?E;O`^nEU52E3
+vsisc_test
+VWAJ=GkS;b@J5;iQJj>Ik12
+r1
+!s85 0
+31
+IVd04ol_]A54lg<FA8YM<^1
+R4
+R5
+R6
+L0 14
+R2
+R3
+!s100 I6f1>Q8jkFh4l96hNb2AI3
+vstatreg
+VCZM_h35G;4GXR;P5eIYB?2
+r1
+31
+IQ?nb^3;GgHmW44nhW?=@V1
+R1
+8statreg.v
+Fstatreg.v
+L0 6
+R2
+R3
+!s85 0
+!s100 bG8?K:PS1UHV7Rg7R@?cf1

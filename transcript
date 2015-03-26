@@ -1,0 +1,43 @@
+# vsim -c -novopt sisc_tb 
+# //  ModelSim SE-64 6.5b_1 Jul 14 2009 Linux 3.11.10-11-desktop
+# //
+# //  Copyright 1991-2009 Mentor Graphics Corporation
+# //              All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND 
+# //  PROPRIETARY INFORMATION WHICH IS THE PROPERTY
+# //  OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
+# //  AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Refreshing /nfs/s-l011/local/vol02/m/mfina/carch/VerilogProject/work.sisc_tb
+# Loading work.sisc_tb
+# Refreshing /nfs/s-l011/local/vol02/m/mfina/carch/VerilogProject/work.sisc
+# Loading work.sisc
+# Refreshing /nfs/s-l011/local/vol02/m/mfina/carch/VerilogProject/work.mux4
+# Loading work.mux4
+# Refreshing /nfs/s-l011/local/vol02/m/mfina/carch/VerilogProject/work.rf
+# Loading work.rf
+# Refreshing /nfs/s-l011/local/vol02/m/mfina/carch/VerilogProject/work.alu
+# Loading work.alu
+# Refreshing /nfs/s-l011/local/vol02/m/mfina/carch/VerilogProject/work.mux32
+# Loading work.mux32
+# Refreshing /nfs/s-l011/local/vol02/m/mfina/carch/VerilogProject/work.statreg
+# Loading work.statreg
+# Refreshing /nfs/s-l011/local/vol02/m/mfina/carch/VerilogProject/work.ctrl
+# Loading work.ctrl
+# Refreshing /nfs/s-l011/local/vol02/m/mfina/carch/VerilogProject/work.sisc_test
+# Loading work.sisc_test
+#                    0   IR>: xxxxxxxx, R1=00000000, R2=00000000, R3=00000000, RD_SEL=x, ALU_OP=xx, WB_SEL=x, RF_WE=x
+#                   35   IR>: 8801000a, R1=00000000, R2=00000000, R3=00000000, RD_SEL=x, ALU_OP=xx, WB_SEL=x, RF_WE=x
+#                   55   IR>: 8801000a, R1=00000000, R2=00000000, R3=00000000, RD_SEL=x, ALU_OP=01, WB_SEL=x, RF_WE=x
+#                   75   IR>: 8801000a, R1=00000000, R2=00000000, R3=00000000, RD_SEL=1, ALU_OP=01, WB_SEL=x, RF_WE=1
+#                   85   IR>: 00000000, R1=00000000, R2=00000000, R3=00000000, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0
+#                  135   IR>: 88020007, R1=00000000, R2=00000000, R3=00000000, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0
+#                  155   IR>: 88020007, R1=00000000, R2=00000000, R3=00000000, RD_SEL=0, ALU_OP=01, WB_SEL=0, RF_WE=0
+#                  175   IR>: 88020007, R1=00000000, R2=00000007, R3=00000000, RD_SEL=1, ALU_OP=01, WB_SEL=0, RF_WE=1
+#                  185   IR>: 80213002, R1=00000000, R2=00000007, R3=00000000, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0
+#                  225   IR>: 80213002, R1=00000007, R2=00000007, R3=00000000, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=1
+#                  235   IR>: f0000000, R1=00000007, R2=00000007, R3=00000000, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=1
+# Halt.
+# Break in Module ctrl at ctrl.v line 63
+# Stopped at ctrl.v line 63 

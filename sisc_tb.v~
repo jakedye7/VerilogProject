@@ -18,7 +18,6 @@ module sisc_test(CLK, RST_F, IR);
 	reg[31:0] IR;
 
 	initial begin
-		RST_F <=1;
 		#5 RST_F <=0; CLK<=1;
 		#5 CLK<=0;
 		#5 RST_F <=0; CLK <=1;

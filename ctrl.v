@@ -8,9 +8,10 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL);
   
   /* TODO: Declare the ports listed above as inputs or outputs */
   // DONE
-  input  CLK, RST_F, STAT;
-  input  [3:0] OPCODE, MM; //OPCODE = Instr[31:28], MM = Instr[27:24]
-  output RF_WE, ALU_OP, WB_SEL, RD_SEL;
+  input  CLK, RST_F;
+  input  [3:0] OPCODE, MM, STAT; //OPCODE = Instr[31:28], MM = Instr[27:24]
+  output reg RF_WE, WB_SEL, RD_SEL;
+  output reg [1:0] ALU_OP;
 
   // states
   parameter start0 = 0, start1 = 1, fetch = 2, decode = 3, execute = 4, mem = 5, writeback = 6;
@@ -65,14 +66,73 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL);
     
   /* TODO: Generate outputs based on the FSM states and inputs. For Parts 2 and 3, you will
        add the new control signals here. */
-  // fetch
-    
-  // decode
-
-  // execute
-    
-  // mem
-    
-  // write back
-
+  // NOP, ADD, ADD imm, SUB, NOT, OR, AND, XOR, ROTR, ROTL, SHFR, SHFL, and HLT -- instructions for part 1
+  // output signals - RF_WE, ALU_OP, WB_SEL, RD_SEL; 
+  //alu_op = 2'b10 -> non arithmetic operation; alu_op = 2'b01 -> use immediate value
+ always @ (posedge CLK)
+  begin
+    if (OPCODE == noop)
+    begin 
+      RF_WE <= 1'b0;
+      ALU_OP <= 2'b00;
+      RD_SEL <= 1'b0;
+      WB_SEL <= 1'b0;
+    end
+  // fetch  -----------------------------------
+    if(present_state == fetch)
+	begin
+		if(OPCODE==alu_op)
+		    begin
+			RF_WE<=0;
+			ALU_OP<=0;
+			RD_SEL<=0;
+			WB_SEL <=0;
+		    end
+	end
+  // decode ----------------------------------
+    else if(present_state==decode) 
+	begin 
+		if(OPCODE==alu_op)
+		    begin
+		    end
+	end
+  // execute -------------------------------
+    else if(present_state==execute) 
+	begin 
+		if(OPCODE==alu_op)
+		    begin
+			if(MM == 4'b1000)
+		    		begin	
+					ALU_OP <= 2'b01;
+		    		end
+			else if(MM == 4'b0000)
+				begin
+					ALU_OP<= 2'b00;
+				end
+		    end
+	end
+  // mem --------------------------------------
+    else if(present_state==mem) 
+	begin 
+		if(OPCODE==alu_op)
+		    begin
+		    end
+	end
+  // write back  ----------------------------------
+    else if(present_state==writeback) 
+	begin 
+		if(OPCODE==alu_op)
+		    begin
+			RF_WE <=1;
+			if(MM == 4'b1000)
+			   begin
+				RD_SEL<=1;
+			   end
+			else if(MM == 4'b0000)
+			   begin
+				RD_SEL<=0;
+			   end
+		    end
+	end
+  end
 endmodule
