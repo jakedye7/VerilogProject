@@ -105,7 +105,7 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL);
 		    		begin	
 					ALU_OP <= 2'b01;
 		    		end
-			else if(MM == 4'b0000)
+			else 
 				begin
 					ALU_OP<= 2'b00;
 				end
@@ -128,7 +128,7 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL);
 			   begin
 				RD_SEL<=1;
 			   end
-			else if(MM == 4'b0000)
+			else 
 			   begin
 				RD_SEL<=0;
 			   end
