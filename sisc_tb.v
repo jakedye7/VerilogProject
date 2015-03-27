@@ -23,9 +23,7 @@ module sisc_test(CLK, RST_F, IR);
 		#5 CLK<=0;
 		#5 RST_F <=0; CLK <=1;
 		#5 CLK <=0;
-		#5 CLK <=1;  RST_F<=1;
-		#5 CLK <=0;
-		#5 IR <= 32'H8801000A; CLK <=1;//1st instruction add immediate 10 into r[1]
+		#5  IR <=32'H00000000;CLK <=1; RST_F<=1;//1st instruction nop
 		#5 CLK <=0;
 		#5 CLK <=1;
 		#5 CLK <=0;
@@ -35,7 +33,7 @@ module sisc_test(CLK, RST_F, IR);
 		#5 CLK <=0;
 		#5 CLK <=1;	
 		#5 CLK <=0;
-		#5 CLK <=1; IR <=32'H00000000;  //2nd instruction nop!
+		#5 CLK <=1; IR <= 32'H8801000A;  //2nd instruction add immediate 10 into r[1]
 		#5 CLK <=0;		
 		#5 CLK <=1;	
 		#5 CLK <=0;
