@@ -84,9 +84,9 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL);
 		if(OPCODE==alu_op)
 		    begin
 			RF_WE<=0;
-			ALU_OP<=0;
 			RD_SEL<=0;
 			WB_SEL <=0;
+			ALU_OP <=0;
 		    end
 	end
   // decode ----------------------------------

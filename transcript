@@ -1,5 +1,5 @@
 # vsim -c -novopt sisc_tb 
-# //  ModelSim SE-64 6.5b_1 Jul 14 2009 Linux 3.11.10-11-desktop
+# //  ModelSim SE-64 6.5b_1 Jul 14 2009 Linux 3.11.10-17-desktop
 # //
 # //  Copyright 1991-2009 Mentor Graphics Corporation
 # //              All Rights Reserved.
@@ -37,7 +37,5 @@
 #                  155   IR>: 88020007, R1=00000000, R2=0000000a, R3=00000000, RD_SEL=0, ALU_OP=01, WB_SEL=0, RF_WE=0
 #                  175   IR>: 80213002, R1=00000007, R2=0000000a, R3=00000000, RD_SEL=0, ALU_OP=01, WB_SEL=0, RF_WE=1
 #                  185   IR>: 80213002, R1=00000007, R2=0000000a, R3=00000000, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0
-#                  225   IR>: f0000000, R1=00000007, R2=0000000a, R3=00000000, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0
-# Halt.
-# Break in Module ctrl at ctrl.v line 63
-# Stopped at ctrl.v line 63 
+# ** Note: $finish    : sisc_tb.v(33)
+#    Time: 225 ns  Iteration: 0  Instance: /sisc_tb/b
