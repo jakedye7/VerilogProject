@@ -38,7 +38,7 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL);
       present_state <= next_state;
     end
   end
-
+	
   /* TODO: Write a process that determines the next state of the fsm. */
   // DONE
   always @ (present_state)
@@ -84,9 +84,16 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL);
 		if(OPCODE==alu_op)
 		    begin
 			RF_WE<=0;
-			RD_SEL<=0;
 			WB_SEL <=0;
 			ALU_OP <=0;
+			if(MM == 4'b1000)
+			   begin
+				RD_SEL<=1;
+			   end
+			else 
+			   begin
+				RD_SEL<=0;
+			   end
 		    end
 	end
   // decode ----------------------------------
@@ -116,6 +123,7 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL);
 	begin 
 		if(OPCODE==alu_op)
 		    begin
+			RF_WE<=1;
 		    end
 	end
   // write back  ----------------------------------
@@ -123,15 +131,8 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL);
 	begin 
 		if(OPCODE==alu_op)
 		    begin
-			RF_WE <=1;
-			if(MM == 4'b1000)
-			   begin
-				RD_SEL<=1;
-			   end
-			else 
-			   begin
-				RD_SEL<=0;
-			   end
+			
+			
 		    end
 	end
   end

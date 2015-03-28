@@ -1,5 +1,6 @@
 // 55:035 sisc processor project
 // sisc module
+//Matt Fina & Jacob Dye
 
 `timescale 1ns/100ps
 
@@ -8,7 +9,7 @@ module sisc (CLK, RST_F, IR);
   input [31:0] IR;
     
   // Datapath and control signals
-  wire [3:0] mux4_result;
+  	wire [3:0] mux4_result;
 	wire [31:0] wb_data;
 	wire [31:0] rsa;
 	wire [31:0] rsb;
@@ -27,8 +28,8 @@ module sisc (CLK, RST_F, IR);
 	wire rd_sel;
 
   // Instantiate and connect all of the components
-  mux4 amux4   (		.in_a        (IR[19:16]),
-			        .in_b        (IR[15:12]),
+  mux4 amux4   (		.in_a        (IR[15:12]),
+			        .in_b        (IR[19:16]),
 				.sel	       (rd_sel),
 			        .out         (mux4_result));
 
