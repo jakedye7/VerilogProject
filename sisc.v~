@@ -1,11 +1,12 @@
 // 55:035 sisc processor project
 // sisc module
+//Matt Fina & Jacob Dye
 
 `timescale 1ns/100ps
 
-module sisc (CLK, RST_F, IR);
+module sisc (CLK, RST_F);
   input CLK, RST_F; 
-  input [31:0] IR;
+  //input [31:0] IR; part2 generates own IR
     
   // Datapath and control signals
   	wire [3:0] mux4_result;
@@ -25,6 +26,17 @@ module sisc (CLK, RST_F, IR);
 	wire [1:0] alu_op;
 	wire [3:0] stat_out;
 	wire rd_sel;
+
+	//part 2 additions
+	wire [15:0] pc_out;
+	wire [15:0] pc_inc;
+	wire [15:0] branch_address;
+	wire [31:0] IR;
+	//part 2 control signals
+	wire pc_write;
+	wire pc_sel;
+	wire pc_rst;
+	wire br_sel;
 
   // Instantiate and connect all of the components
   mux4 amux4   (		.in_a        (IR[15:12]),
@@ -66,10 +78,29 @@ module sisc (CLK, RST_F, IR);
 			        .RF_WE       (rf_we),
 			        .ALU_OP		   (alu_op),
 			        .WB_SEL      (wb_sel),
-			        .RD_SEL			 (rd_sel));
+			        .RD_SEL			 (rd_sel),
+				.PC_SEL (pc_sel),
+				.PC_WRITE (pc_write),
+				.PC_RST (pc_rst),
+				.BR_SEL (br_sel));
+					
+	pc progcounter (.br_addr (branch_address[15:0]),
+					.pc_sel (pc_sel), 
+					.pc_write (pc_write), 
+					.pc_rst (pc_rst),
+					.pc_out(pc_out[15:0]),
+					.pc_inc (pc_inc[15:0]));
+					
+	im instr_mem (.read_addr (pc_out[15:0]),
+				.read_data (IR[31:0]));
+				
+	br branch(.pc_inc (pc_inc[15:0]), 
+			.imm (IR[15:0]),
+			.br_sel (br_sel),
+			.br_addr (branch_address));
                  
   initial
   begin
-    $monitor ($time,,," IR>: %h, R1=%h, R2=%h, R3=%h, RD_SEL=%b, ALU_OP=%b, WB_SEL=%b, RF_WE=%b", IR, my_rf.ram_array[1], my_rf.ram_array[2], my_rf.ram_array[3], rd_sel, alu_op, wb_sel, rf_we); 
+    $monitor ($time,,," IR>: %h, PC=%h, R1=%h, R2=%h, R3=%h, RD_SEL=%b, ALU_OP=%b, WB_SEL=%b, RF_WE=%b, BR_SEL=%b, PC_WRITE=%b, PC_SEL=%b", IR, pc_out, my_rf.ram_array[1], my_rf.ram_array[2], my_rf.ram_array[3], rd_sel, alu_op, wb_sel, rf_we, br_sel, pc_write, pc_sel); 
   end 
 endmodule

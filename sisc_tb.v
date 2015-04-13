@@ -6,23 +6,35 @@
 
 module sisc_tb;
 	wire CLK, RST_F;
-	wire[31:0] IR;
 
-	sisc a(CLK, RST_F, IR);
-	sisc_test b(CLK, RST_F, IR);
+	sisc a(CLK, RST_F);
+	sisc_test b(CLK, RST_F);
 endmodule
 
-module sisc_test(CLK, RST_F, IR);
+module sisc_test(CLK, RST_F);
 	output CLK, RST_F;
-	output[31:0] IR;
+	//output[31:0] IR;
 	reg CLK, RST_F;
-	reg[31:0] IR;
+	//reg[31:0] IR;
 
+	initial
+		begin
+			CLK =0;
+			RST_F =1;
+		end
+	
 	always       //drive clock, 10ns clock cycle -> 5ns on, 5ns off
 		begin
 			#5 CLK <= !CLK;
 		end
 
+	initial	
+		begin	
+			RST_F<=0;
+			#20 
+			RST_F <=1;
+		end
+/* part 1 instructions
 	initial begin
 		CLK<=0; RST_F<=1;
 		#20 RST_F <=0;
@@ -42,4 +54,5 @@ module sisc_test(CLK, RST_F, IR);
 		#50 IR <=32'HF0000000;  //halt!!!
 		#50 $finish;
 	end
+*/
 endmodule

@@ -26,6 +26,7 @@ module sisc (CLK, RST_F);
 	wire [1:0] alu_op;
 	wire [3:0] stat_out;
 	wire rd_sel;
+
 	//part 2 additions
 	wire [15:0] pc_out;
 	wire [15:0] pc_inc;
@@ -34,7 +35,7 @@ module sisc (CLK, RST_F);
 	//part 2 control signals
 	wire pc_write;
 	wire pc_sel;
-	wire pr_rst;
+	wire pc_rst;
 	wire br_sel;
 
   // Instantiate and connect all of the components
@@ -77,22 +78,26 @@ module sisc (CLK, RST_F);
 			        .RF_WE       (rf_we),
 			        .ALU_OP		   (alu_op),
 			        .WB_SEL      (wb_sel),
-			        .RD_SEL			 (rd_sel));
+			        .RD_SEL			 (rd_sel),
+				.PC_SEL 	(pc_sel),
+				.PC_WRITE 	(pc_write),
+				.PC_RST 	(pc_rst),
+				.BR_SEL 	(br_sel));
 					
-	pc progcounter (.br_addr (branch_address),
-					.pc_sel (pc_sel), 
-					.pc_write (pc_write), 
-					.pc_rst (pc_rst),
-					.pc_out(pc_out),
-					.pc_inc (pc_inc));
+	pc progcounter (.br_addr 	(branch_address[15:0]),
+			.pc_sel 	(pc_sel), 
+			.pc_write 	(pc_write), 
+			.pc_rst 	(pc_rst),
+			.pc_out		(pc_out[15:0]),
+			.pc_inc 		(pc_inc[15:0]));
 					
-	im instr_mem (.read_addr (pc_out),
-				.read_data (IR));
+	im instr_mem (.read_addr 	(pc_out[15:0]),
+			.read_data 	(IR[31:0]));
 				
-	br branch(.pc_inc (pc_inc), 
-			.imm (IR[15:0]),
-			.br_sel (br_sel),
-			.br_addr (branch_address));
+	br branch(.pc_inc 	(pc_inc[15:0]), 
+		.imm 		(IR[15:0]),
+		.br_sel 	(br_sel),
+		.br_addr 	(branch_address));
                  
   initial
   begin
