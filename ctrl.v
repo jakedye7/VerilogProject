@@ -107,7 +107,7 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL, PC_SEL
 			begin
 				RF_WE<=0;
 				WB_SEL <=0;
-				ALU_OP <=0;
+				ALU_OP <=2;
 				BR_SEL <=1;			
 			end
 	end
