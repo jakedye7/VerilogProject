@@ -103,16 +103,30 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL, PC_SEL
 			ALU_OP <=0;
 			
 		    end
-		if (OPCODE == 4'H6)
+		if (OPCODE == 4'H6)//bne
 			begin
 				RF_WE<=0;
 				WB_SEL <=0;
-				ALU_OP <=2;
+				ALU_OP <=2'b10;
 				BR_SEL <=1;			
+			end
+		if(OPCODE == 4'H5)//brr
+			begin
+				RF_WE<=0;
+				WB_SEL <=0;
+				ALU_OP <=2'b10;
+				BR_SEL <=0;
+			end
+		if(OPCODE == 4'H4)//bra
+			begin
+				RF_WE<=0;
+				WB_SEL <=0;
+				ALU_OP <=2'b10;
+				BR_SEL <=1;
 			end
 	end
   // decode ----------------------------------
-    else if(present_state==decode) 
+   else if(present_state==decode) 
 	begin 
 		PC_WRITE<=0;
 		if(OPCODE==alu_op)
@@ -148,7 +162,7 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL, PC_SEL
 		if (OPCODE == 4'H6)
 			begin
 				//PC_WRITE <=1;
-				if(STAT == 4'b0000)
+				if(STAT == MM)
 					begin
 						PC_SEL <=1;//take branch
 					end
@@ -156,6 +170,14 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL, PC_SEL
 					begin
 						PC_SEL <=0;//dont take branch
 					end
+			end
+		if(OPCODE == 4'H5)//brr
+			begin
+			
+			end
+		if(OPCODE == 4'H4)//bra
+			begin
+			
 			end
 	end
   // mem --------------------------------------
@@ -165,23 +187,13 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL, PC_SEL
 		    begin
 			RF_WE<=1;
 		    end
-		if(OPCODE == 4'H6)
-			begin
-				//PC_WRITE <=1;
-			end
 	end
   // write back  ----------------------------------
     else if(present_state==writeback) 
 	begin 
 		if(OPCODE==alu_op)
 		    begin
-			
-			
 		    end
-		else
-			begin
-				//PC_WRITE <=0;
-			end
 	end
   end
 endmodule

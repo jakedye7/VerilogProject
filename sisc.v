@@ -101,6 +101,6 @@ module sisc (CLK, RST_F);
                  
   initial
   begin
-    $monitor ($time,,," IR>: %h, PC=%h, R1=%h, R2=%h, R3=%h, RD_SEL=%b, ALU_OP=%b, WB_SEL=%b, RF_WE=%b, BR_SEL=%b, PC_WRITE=%b, PC_SEL=%b", IR, pc_out, my_rf.ram_array[1], my_rf.ram_array[2], my_rf.ram_array[3], rd_sel, alu_op, wb_sel, rf_we, br_sel, pc_write, pc_sel); 
+    $monitor ($time,,," IR>: %h, PC=%h, R1=%h, R2=%h, R3=%h, RD_SEL=%b, ALU_OP=%b, WB_SEL=%b, RF_WE=%b, BR_SEL=%b, PC_WRITE=%b, PC_SEL=%b Add=%h", IR, pc_out, my_rf.ram_array[1], my_rf.ram_array[2], my_rf.ram_array[3], rd_sel, alu_op, wb_sel, rf_we, br_sel, pc_write, pc_sel, branch_address); 
   end 
 endmodule

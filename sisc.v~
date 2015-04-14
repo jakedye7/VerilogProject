@@ -79,25 +79,25 @@ module sisc (CLK, RST_F);
 			        .ALU_OP		   (alu_op),
 			        .WB_SEL      (wb_sel),
 			        .RD_SEL			 (rd_sel),
-				.PC_SEL (pc_sel),
-				.PC_WRITE (pc_write),
-				.PC_RST (pc_rst),
-				.BR_SEL (br_sel));
+				.PC_SEL 	(pc_sel),
+				.PC_WRITE 	(pc_write),
+				.PC_RST 	(pc_rst),
+				.BR_SEL 	(br_sel));
 					
-	pc progcounter (.br_addr (branch_address[15:0]),
-					.pc_sel (pc_sel), 
-					.pc_write (pc_write), 
-					.pc_rst (pc_rst),
-					.pc_out(pc_out[15:0]),
-					.pc_inc (pc_inc[15:0]));
+	pc progcounter (.br_addr 	(branch_address[15:0]),
+			.pc_sel 	(pc_sel), 
+			.pc_write 	(pc_write), 
+			.pc_rst 	(pc_rst),
+			.pc_out		(pc_out[15:0]),
+			.pc_inc 		(pc_inc[15:0]));
 					
-	im instr_mem (.read_addr (pc_out[15:0]),
-				.read_data (IR[31:0]));
+	im instr_mem (.read_addr 	(pc_out[15:0]),
+			.read_data 	(IR[31:0]));
 				
-	br branch(.pc_inc (pc_inc[15:0]), 
-			.imm (IR[15:0]),
-			.br_sel (br_sel),
-			.br_addr (branch_address));
+	br branch(.pc_inc 	(pc_inc[15:0]), 
+		.imm 		(IR[15:0]),
+		.br_sel 	(br_sel),
+		.br_addr 	(branch_address));
                  
   initial
   begin
