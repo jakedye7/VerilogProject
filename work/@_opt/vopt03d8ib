@@ -1,0 +1,180 @@
+m255
+K3
+13
+cModel Technology
+Z0 d/user/m/mfina/carch/VerilogProject
+T_opt
+Z1 VRoLlonlOKNh5KANO=SjI<3
+Z2 04 7 4 work sisc_tb fast 0
+Z3 =1--552d507b-5443c-19aa
+Z4 o-quiet -auto_acc_if_foreign -work work
+Z5 n@_opt
+Z6 OL;O;6.5b_1;42
+valu
+Z7 VNA1>;Mi60:AcG`J2UHITS3
+r1
+31
+Z8 Iz`4:U3BT3=BNfL2cMNM1`1
+Z9 d/nfs/s-l011/local/vol02/m/mfina/carch/VerilogProject
+Z10 w1427142366
+Z11 8alu.v
+Z12 Falu.v
+L0 6
+Z13 OL;L;6.5b_1;42
+Z14 o-L mtiAvm -L mtiOvm -L mtiUPF
+!s85 0
+Z15 !s100 f0jEFRFHcN?9fP4Y]FOGc0
+vbr
+Z16 VUk8]OiOclND7CgT^9QK:60
+r1
+31
+Z17 I3Bef=M9?]glWCA1<3_50C2
+R9
+Z18 w1428954183
+8br.v
+Fbr.v
+L0 6
+R13
+R14
+!s85 0
+Z19 !s100 B3jf`72;:VX8f:9jY5zjU0
+vctrl
+Z20 VdVVCD:mb=iRZ@omWVC>m?2
+r1
+31
+Z21 Id@>R[BCSP2R0]:^KZJjhR3
+R9
+Z22 w1429033066
+Z23 8ctrl.v
+Z24 Fctrl.v
+L0 7
+R13
+R14
+!s85 0
+Z25 !s100 ^EhMCPjRS<nF>nfM<QoTT1
+vim
+Z26 V?lO4=zl;TnEkIkhm2e;5^0
+r1
+31
+Z27 IcID>0fO3Lzl60d9E<0FA=3
+R9
+R18
+8im.v
+Fim.v
+L0 6
+R13
+R14
+!s85 0
+Z28 !s100 L0U]ao[FAIln=46^bTnaK0
+vmux32
+Z29 V?;CBec=T[U91gU:7cGkUC3
+r1
+31
+Z30 IC]cBZ:925CO8NnYkfWaV`3
+R9
+R10
+Z31 8mux32.v
+Z32 Fmux32.v
+L0 6
+R13
+R14
+!s85 0
+Z33 !s100 zDJ8eC?lHGj_0e_=12iN]1
+vmux4
+Z34 Vh083iXmMf2[Bllg9dlXT>3
+r1
+31
+Z35 Ih;cEON7FEF57`FTb4]lc<0
+R9
+R10
+Z36 8mux4.v
+Z37 Fmux4.v
+L0 6
+R13
+R14
+!s85 0
+Z38 !s100 U?]6M6Xao@4ZW<D`TG[GM2
+vpc
+Z39 VRaoEf9j7f2T2J?@A9>DaW1
+r1
+31
+Z40 II^JMZ>N]3_BSj<nSNeBkH0
+R9
+R18
+8pc.v
+Fpc.v
+L0 6
+R13
+R14
+!s85 0
+Z41 !s100 il6RAk2bn3kTINj8S@f1`3
+vrf
+Z42 Vf6EFI85]z:>XS7CHN=oz`0
+r1
+31
+Z43 I]kBOGhT;D:9eUX_VcJOdR2
+R9
+R10
+8rf.v
+Frf.v
+L0 6
+R13
+R14
+!s85 0
+Z44 !s100 8f_^IPHa]Qi_2CgPP_foo0
+vsisc
+Z45 VozThTS4c_6gU97nSRnQ>42
+r1
+31
+Z46 IjMQ@bUKaUV3]<R7l1i`H^0
+R9
+Z47 w1428961456
+Z48 8sisc.v
+Z49 Fsisc.v
+L0 7
+R13
+R14
+!s85 0
+Z50 !s100 dk6l<oYA1MafIMzhDNooM3
+vsisc_tb
+Z51 VG@blPFYUiZ4NCCR^;;[<=0
+r1
+31
+Z52 I@fUa90i]`?7L50ZI:H`A03
+R9
+Z53 w1428962200
+Z54 8sisc_tb.v
+Z55 Fsisc_tb.v
+L0 7
+R13
+R14
+!s85 0
+Z56 !s100 2=C2N`XCld>M:jZ_39@9>0
+vsisc_test
+Z57 Vbbl18f87ZYZ^?`99l:7=e1
+r1
+31
+Z58 Im1@1X_8NafC]>B87eHTFL3
+R9
+R53
+R54
+R55
+L0 14
+R13
+R14
+!s85 0
+Z59 !s100 OEEFD:YjJ[026_K<^ShTQ2
+vstatreg
+Z60 VCZM_h35G;4GXR;P5eIYB?2
+r1
+31
+Z61 IQ?nb^3;GgHmW44nhW?=@V1
+R9
+R10
+Z62 8statreg.v
+Z63 Fstatreg.v
+L0 6
+R13
+R14
+!s85 0
+Z64 !s100 bG8?K:PS1UHV7Rg7R@?cf1

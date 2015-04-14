@@ -2,19 +2,26 @@ m255
 K3
 13
 cModel Technology
-d/user/m/mfina/carch/VerilogProject
+Z0 d/user/m/mfina/carch/VerilogProject
+T_opt
+VRoLlonlOKNh5KANO=SjI<3
+04 7 4 work sisc_tb fast 0
+=1--552d507b-5443c-19aa
+o-quiet -auto_acc_if_foreign -work work
+n@_opt
+OL;O;6.5b_1;42
 valu
 VNA1>;Mi60:AcG`J2UHITS3
 r1
 31
 Iz`4:U3BT3=BNfL2cMNM1`1
-Z0 d/nfs/s-l011/local/vol02/m/mfina/carch/VerilogProject
-Z1 w1427142366
+Z1 d/nfs/s-l011/local/vol02/m/mfina/carch/VerilogProject
+Z2 w1427142366
 8alu.v
 Falu.v
 L0 6
-Z2 OL;L;6.5b_1;42
-Z3 o-L mtiAvm -L mtiOvm -L mtiUPF
+Z3 OL;L;6.5b_1;42
+Z4 o-L mtiAvm -L mtiOvm -L mtiUPF
 !s85 0
 !s100 f0jEFRFHcN?9fP4Y]FOGc0
 vbr
@@ -22,41 +29,41 @@ VUk8]OiOclND7CgT^9QK:60
 r1
 31
 I3Bef=M9?]glWCA1<3_50C2
-Z4 d/nfs/s-l011/local/vol02/m/mfina/carch/VerilogProject
+R1
 Z5 w1428954183
 8br.v
 Fbr.v
 L0 6
-R2
 R3
+R4
 !s85 0
 !s100 B3jf`72;:VX8f:9jY5zjU0
 vctrl
 VdVVCD:mb=iRZ@omWVC>m?2
 r1
 31
-I0SN>U716S4B`ih0E^1b`I3
-R4
-w1428962900
+IAnobDfanA5PaT6BCYRKWi3
+R1
+w1429035227
 8ctrl.v
 Fctrl.v
 L0 7
-R2
 R3
+R4
 !s85 0
-!s100 lOKVOjcWCc8NC=4Mlm^jF3
+!s100 An0HEaAY>MEzV4_C:PS;b2
 vim
 V?lO4=zl;TnEkIkhm2e;5^0
 r1
 31
 IcID>0fO3Lzl60d9E<0FA=3
-R4
+R1
 R5
 8im.v
 Fim.v
 L0 6
-R2
 R3
+R4
 !s85 0
 !s100 L0U]ao[FAIln=46^bTnaK0
 vmux32
@@ -64,13 +71,13 @@ V?;CBec=T[U91gU:7cGkUC3
 r1
 31
 IC]cBZ:925CO8NnYkfWaV`3
-R4
 R1
+R2
 8mux32.v
 Fmux32.v
 L0 6
-R2
 R3
+R4
 !s85 0
 !s100 zDJ8eC?lHGj_0e_=12iN]1
 vmux4
@@ -78,13 +85,13 @@ Vh083iXmMf2[Bllg9dlXT>3
 r1
 31
 Ih;cEON7FEF57`FTb4]lc<0
-R4
 R1
+R2
 8mux4.v
 Fmux4.v
 L0 6
-R2
 R3
+R4
 !s85 0
 !s100 U?]6M6Xao@4ZW<D`TG[GM2
 vpc
@@ -92,13 +99,13 @@ VRaoEf9j7f2T2J?@A9>DaW1
 r1
 31
 II^JMZ>N]3_BSj<nSNeBkH0
-R4
+R1
 R5
 8pc.v
 Fpc.v
 L0 6
-R2
 R3
+R4
 !s85 0
 !s100 il6RAk2bn3kTINj8S@f1`3
 vrf
@@ -106,13 +113,13 @@ Vf6EFI85]z:>XS7CHN=oz`0
 r1
 31
 I]kBOGhT;D:9eUX_VcJOdR2
-R4
 R1
+R2
 8rf.v
 Frf.v
 L0 6
-R2
 R3
+R4
 !s85 0
 !s100 8f_^IPHa]Qi_2CgPP_foo0
 vsisc
@@ -120,13 +127,13 @@ VozThTS4c_6gU97nSRnQ>42
 r1
 31
 IjMQ@bUKaUV3]<R7l1i`H^0
-R4
+R1
 w1428961456
 8sisc.v
 Fsisc.v
 L0 7
-R2
 R3
+R4
 !s85 0
 !s100 dk6l<oYA1MafIMzhDNooM3
 vsisc_tb
@@ -134,13 +141,13 @@ VG@blPFYUiZ4NCCR^;;[<=0
 r1
 31
 I@fUa90i]`?7L50ZI:H`A03
-R4
+R1
 Z6 w1428962200
 Z7 8sisc_tb.v
 Z8 Fsisc_tb.v
 L0 7
-R2
 R3
+R4
 !s85 0
 !s100 2=C2N`XCld>M:jZ_39@9>0
 vsisc_test
@@ -149,25 +156,25 @@ r1
 !s85 0
 31
 Im1@1X_8NafC]>B87eHTFL3
-R4
+R1
 R6
 R7
 R8
 L0 14
-R2
 R3
+R4
 !s100 OEEFD:YjJ[026_K<^ShTQ2
 vstatreg
 VCZM_h35G;4GXR;P5eIYB?2
 r1
 31
 IQ?nb^3;GgHmW44nhW?=@V1
-R4
 R1
+R2
 8statreg.v
 Fstatreg.v
 L0 6
-R2
 R3
+R4
 !s85 0
 !s100 bG8?K:PS1UHV7Rg7R@?cf1
