@@ -9,7 +9,7 @@ module sisc (CLK, RST_F);
   //input [31:0] IR; part2 generates own IR
     
   // Datapath and control signals
-  	wire [3:0] mux4_result;
+  wire [3:0] mux4_result;
 	wire [31:0] wb_data;
 	wire [31:0] rsa;
 	wire [31:0] rsb;
@@ -39,10 +39,10 @@ module sisc (CLK, RST_F);
 	wire br_sel;
 
   // Instantiate and connect all of the components
-  mux4 amux4   (		.in_a        (IR[15:12]),
-			        .in_b        (IR[19:16]),
-				.sel	       (rd_sel),
-			        .out         (mux4_result));
+  mux4 amux4   (.in_a        (IR[15:12]),
+			        	.in_b        (IR[19:16]),
+								.sel	       (rd_sel),
+			        	.out         (mux4_result));
 
 	rf my_rf   (.read_rega   (IR[23:20]),
 		          .read_regb   (IR[19:16]),
@@ -52,52 +52,51 @@ module sisc (CLK, RST_F);
 		          .rsa         (rsa),
 		          .rsb         (rsb));
 
-	alu	my_alu (	.rsa         (rsa[31:0]),
+	alu	my_alu (.rsa         (rsa[31:0]),
 			        .rsb         (rsb[31:0]),
 			        .imm	       (IR[15:0]),
-				.alu_op      (alu_op[1:0]),
+							.alu_op      (alu_op[1:0]),
 			        .alu_result  (alu_result),
-				.stat 	       (cc),
-				.stat_en 		(cc_en));
+							.stat 	     (cc),
+							.stat_en 		 (cc_en));
 	
-	mux32	amux32  (	.in_a				 (32'h00000000),
-			        .in_b				 (alu_result[31:0]),
-				.sel	       (wb_sel),
-			        .out         (wb_data)
-				);
+	mux32	amux32  (.in_a				 (32'h00000000),
+			        	 .in_b				 (alu_result[31:0]),
+								 .sel	       	 (wb_sel),
+			        	 .out          (wb_data));
 
   statreg my_s  (.in          (cc[3:0]),
-		.enable          (cc_en),
-  						.out         (stat_out));
+								 .enable      (cc_en),
+  							 .out         (stat_out));
 
 	ctrl my_ctrl (.CLK 	       (CLK),
-			        .RST_F       (RST_F),
-			        .OPCODE      (IR[31:28]),
-			        .MM          (IR[27:24]),
-			        .STAT        (stat_out),
-			        .RF_WE       (rf_we),
-			        .ALU_OP		   (alu_op),
-			        .WB_SEL      (wb_sel),
-			        .RD_SEL			 (rd_sel),
-				.PC_SEL 	(pc_sel),
-				.PC_WRITE 	(pc_write),
-				.PC_RST 	(pc_rst),
-				.BR_SEL 	(br_sel));
+			        	.RST_F       (RST_F),
+			        	.OPCODE      (IR[31:28]),
+			        	.MM          (IR[27:24]),
+			        	.STAT        (stat_out),
+			        	.RF_WE       (rf_we),
+			        	.ALU_OP		   (alu_op),
+			        	.WB_SEL      (wb_sel),
+			        	.RD_SEL			 (rd_sel),
+							  .PC_SEL 		 (pc_sel),
+							  .PC_WRITE 	 (pc_write),
+								.PC_RST 		 (pc_rst),
+								.BR_SEL 		 (br_sel));
 					
-	pc progcounter (.br_addr 	(branch_address[15:0]),
-			.pc_sel 	(pc_sel), 
-			.pc_write 	(pc_write), 
-			.pc_rst 	(pc_rst),
-			.pc_out		(pc_out[15:0]),
-			.pc_inc 		(pc_inc[15:0]));
+	pc progcounter (.br_addr 	 (branch_address[15:0]),
+								  .pc_sel 	 (pc_sel), 
+								  .pc_write  (pc_write), 
+								  .pc_rst 	 (pc_rst),
+									.pc_out		 (pc_out[15:0]),
+									.pc_inc		 (pc_inc[15:0]));
 					
 	im instr_mem (.read_addr 	(pc_out[15:0]),
-			.read_data 	(IR[31:0]));
+								.read_data 	(IR[31:0]));
 				
 	br branch(.pc_inc 	(pc_inc[15:0]), 
-		.imm 		(IR[15:0]),
-		.br_sel 	(br_sel),
-		.br_addr 	(branch_address));
+						.imm 		  (IR[15:0]),
+						.br_sel 	(br_sel),
+						.br_addr 	(branch_address));
                  
   initial
   begin
