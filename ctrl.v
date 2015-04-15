@@ -48,9 +48,11 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL, PC_SEL
   always @ (posedge CLK or negedge RST_F)
   begin
     if(!RST_F) begin
-	  	present_state <= start0;
+	PC_RST<=1;	
+  	present_state <= start0;
     end
     else begin
+	PC_RST<=0;
       present_state <= next_state;
     end
   end
@@ -136,7 +138,7 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL, PC_SEL
 				RF_WE <= 0;
 				WB_SEL <= 0;
 				ALU_OP <= 2'b10;
-				BR_SEL <= 1;			
+			//	BR_SEL <= 1;			
 			end
 
 			if(OPCODE == 4'H5) //brr
@@ -144,7 +146,7 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL, PC_SEL
 				RF_WE <= 0;
 				WB_SEL <= 0;
 				ALU_OP <= 2'b10;
-				BR_SEL <= 0;  // should this be assigned 1?   <--- ???
+			//	BR_SEL <= 0;  // should this be assigned 1?   <--- ???
 			end
 
 			if(OPCODE == 4'H4) //bra
@@ -152,7 +154,7 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL, PC_SEL
 				RF_WE <= 0;
 				WB_SEL <= 0;
 				ALU_OP <= 2'b10;
-				BR_SEL <= 1;
+			//	BR_SEL <= 1;
 			end
 		end
 
@@ -160,7 +162,7 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL, PC_SEL
    	else if(present_state == decode) 
 		begin 
 			PC_WRITE <= 0;
-			//PC_SEL <= 0; // <--------------------------------------------------- JAKE
+		//	PC_SEL <= 0; // <--------------------------------------------------- JAKE
 			
 			if(OPCODE == alu_op)
 		  begin
@@ -189,11 +191,21 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL, PC_SEL
 			if(OPCODE == 4'H6)
 			begin
 				//PC_WRITE <= 1; <-------------- Should only be 1 for FETCH right ???
-
-				if(STAT == MM)
-					PC_SEL <= 1; //take branch
+				$display("hello, MM=%b", MM);
+				
+				if((MM&STAT)== 4'b0000)
+				begin
+					$display($time,, "im here, Present State-%h", present_state);
+					PC_SEL<=1;
+				//	PC_WRITE <=1;
+					BR_SEL <=1;
+					present_state <= fetch;
+					//PC_SEL <= 1; //take branch
+				end
 				else
+						begin
 					PC_SEL <= 0; //dont take branch
+						end
 			end
 
 			if(OPCODE == 4'H5) //brr
@@ -224,11 +236,11 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL, PC_SEL
 		end
 
     // -------------------------------------------------------------------------------- JAKE
-		//else if(present_state == writeback)
-		//begin
-		//	if(((OPCODE == 4'H4) || (OPCODE == 4'H5) || (OPCODE == 4'H6)) && (MM == 4'H0))
+	//	else if(present_state == writeback)
+	//	begin
+		//	if(((OPCODE == 4'H4) || (OPCODE == 4'H5) || (OPCODE == 4'H6)) && (MM == STAT))
 		//		PC_SEL <= 1'b1; 
-    //end
+   // end
     // -------------------------------------------------------------------------------------
   end
 endmodule
