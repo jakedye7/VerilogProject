@@ -8,9 +8,9 @@
 80213002 //SUB R3 <- R2 -R1
 60000009 //branch if not equal to start
 88010003 //r1 <- r1 + 3 = 4
-88020002 // r2 <- r2 + 2 = 4
-80213002
-60000000
+88020002 //r2 <- r2 + 2 = 4
+80213002 //SUB R3 <- R2 -R1
+60000000 //branch if not equal to start
 F0000000 //0B: HALT
 
 //8022300B //03: SHFL R3 <- R2 << [R2]

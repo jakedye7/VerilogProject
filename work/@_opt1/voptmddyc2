@@ -1,0 +1,176 @@
+m255
+K3
+13
+cModel Technology
+Z0 d/user/m/mfina/carch/VerilogProject
+T_opt
+Z1 VRoLlonlOKNh5KANO=SjI<3
+Z2 04 7 4 work sisc_tb fast 0
+Z3 =1--552d507b-5443c-19aa
+Z4 o-quiet -auto_acc_if_foreign -work work
+Z5 n@_opt
+Z6 OL;O;6.5b_1;42
+T_opt1
+Z7 VF2eGzSlONV>13E[b5A=dZ3
+R2
+Z8 =1--552ef138-83d36-2adf
+R4
+Z9 n@_opt1
+R6
+valu
+Z10 VNA1>;Mi60:AcG`J2UHITS3
+r1
+31
+Z11 Iz`4:U3BT3=BNfL2cMNM1`1
+Z12 w1427142366
+Z13 8alu.v
+Z14 Falu.v
+L0 6
+Z15 OL;L;6.5b_1;42
+Z16 o-L mtiAvm -L mtiOvm -L mtiUPF
+!s85 0
+Z17 !s100 f0jEFRFHcN?9fP4Y]FOGc0
+vbr
+Z18 VUk8]OiOclND7CgT^9QK:60
+r1
+31
+Z19 I3Bef=M9?]glWCA1<3_50C2
+Z20 w1428954183
+8br.v
+Fbr.v
+L0 6
+R15
+R16
+!s85 0
+Z21 !s100 B3jf`72;:VX8f:9jY5zjU0
+vctrl
+Z22 IQj[IZTnLo3XUgIV0l6fNZ1
+Z23 VdVVCD:mb=iRZ@omWVC>m?2
+Z24 d/nfs/s-l011/local/vol01/j/jbdye/Documents/VerilogProject
+Z25 w1429139673
+Z26 8ctrl.v
+Z27 Fctrl.v
+L0 7
+R15
+r1
+31
+R16
+Z28 !s100 WU7`8LfI@ihfdGRQAQ2Pf2
+!s85 0
+vim
+Z29 V?lO4=zl;TnEkIkhm2e;5^0
+r1
+31
+Z30 IcID>0fO3Lzl60d9E<0FA=3
+R20
+8im.v
+Fim.v
+L0 6
+R15
+R16
+!s85 0
+Z31 !s100 L0U]ao[FAIln=46^bTnaK0
+vmux32
+Z32 V?;CBec=T[U91gU:7cGkUC3
+r1
+31
+Z33 IC]cBZ:925CO8NnYkfWaV`3
+R12
+Z34 8mux32.v
+Z35 Fmux32.v
+L0 6
+R15
+R16
+!s85 0
+Z36 !s100 zDJ8eC?lHGj_0e_=12iN]1
+vmux4
+Z37 Vh083iXmMf2[Bllg9dlXT>3
+r1
+31
+Z38 Ih;cEON7FEF57`FTb4]lc<0
+R12
+Z39 8mux4.v
+Z40 Fmux4.v
+L0 6
+R15
+R16
+!s85 0
+Z41 !s100 U?]6M6Xao@4ZW<D`TG[GM2
+vpc
+Z42 VRaoEf9j7f2T2J?@A9>DaW1
+r1
+31
+Z43 II^JMZ>N]3_BSj<nSNeBkH0
+Z44 w1429110035
+8pc.v
+Fpc.v
+L0 6
+R15
+R16
+!s85 0
+Z45 !s100 il6RAk2bn3kTINj8S@f1`3
+vrf
+Z46 Vf6EFI85]z:>XS7CHN=oz`0
+r1
+31
+Z47 I]kBOGhT;D:9eUX_VcJOdR2
+R12
+8rf.v
+Frf.v
+L0 6
+R15
+R16
+!s85 0
+Z48 !s100 8f_^IPHa]Qi_2CgPP_foo0
+vsisc
+Z49 VozThTS4c_6gU97nSRnQ>42
+r1
+31
+Z50 I8KS5TEBe;<_^YdL^_LD:b3
+Z51 w1429110119
+Z52 8sisc.v
+Z53 Fsisc.v
+L0 7
+R15
+R16
+!s85 0
+Z54 !s100 lQb8C=?`7:S@_eHUKC8QQ2
+vsisc_tb
+Z55 VG@blPFYUiZ4NCCR^;;[<=0
+r1
+31
+Z56 I@fUa90i]`?7L50ZI:H`A03
+Z57 w1428962200
+Z58 8sisc_tb.v
+Z59 Fsisc_tb.v
+L0 7
+R15
+R16
+!s85 0
+Z60 !s100 2=C2N`XCld>M:jZ_39@9>0
+vsisc_test
+Z61 Vbbl18f87ZYZ^?`99l:7=e1
+r1
+31
+Z62 Im1@1X_8NafC]>B87eHTFL3
+R57
+R58
+R59
+L0 14
+R15
+R16
+!s85 0
+Z63 !s100 OEEFD:YjJ[026_K<^ShTQ2
+vstatreg
+Z64 VCZM_h35G;4GXR;P5eIYB?2
+r1
+31
+Z65 IQ?nb^3;GgHmW44nhW?=@V1
+R12
+Z66 8statreg.v
+Z67 Fstatreg.v
+L0 6
+R15
+R16
+!s85 0
+Z68 !s100 bG8?K:PS1UHV7Rg7R@?cf1
