@@ -1,17 +1,29 @@
 // 55:035 sisc processor project
-// This program tests arithmetic instructions from Part 1. These are
-//	the same instructions as in sisc_tb_p1.v, available on ICON.
+// Jacob Dye & Matt Fina
+//	instructions for part 2
 //
-00000000 //00: NOP
-88010001 //01: ADDI R1 <- R0 + (0x0000)0001
-80112001 //02: ADD  R2 <- R1 + R1
-80213002 //SUB R3 <- R2 -R1
-60000009 //branch if not equal to start
-88010003 //r1 <- r1 + 3 = 4
-88020002 //r2 <- r2 + 2 = 4
-80213002 //SUB R3 <- R2 -R1
-60000000 //branch if not equal to start
-F0000000 //0B: HALT
+00000000 //00: NOP!
+88010001 //01: ADDI R1 <- R0 + (0x0000)0001 
+80112001 //02: ADD  R2 <- R1 + R1    R2=2
+80213002 //03:SUB R3 <- R2 -R1       R3=1
+62000006 //04:branch if (greater or equal to zero) to instruction 6. should skip nop
+00000000 //05: NOP!
+88010003 //06: r1 <- r1 + 3 = 4
+80215002 //07: r5 <- r2 - r1; should set negative bit in STAT reg R5 = -2
+6200006F //08: branch if (greater or equal to zero) to halt at end. should NOT branch
+80536001 //09: r6 <- r5+r3 = -1
+53000001 //0A: branch if (less than or equal to zero) should skip nop
+00000000 //0B: NOP!
+80124002 //0C: r4 <- r1 - r2 = 2
+53000001 //0D: branch if (less than or equal to zero) should NOT branch
+00000000 //0E: NOP!
+80237001 //0F: r7 <- r2 + r3 = 3
+43000000 //1F: branch if (less than or equal to zero) should NOT branch (branches to start)
+80537001 //2F: r7 <- r5 + r3 = -1
+4300006F //3F: branch if (less than or equal to zero) should branch to end
+00000000 //4F: NOP!
+00000000 //5F: NOP!
+F0000000 //6F: HALT
 
 //8022300B //03: SHFL R3 <- R2 << [R2]
 //80124002 //04: SUB  R4 <- R1 - R2

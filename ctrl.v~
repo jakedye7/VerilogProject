@@ -92,23 +92,23 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL, PC_SEL
 			//PC_SEL <= 0;
 			PC_RST <= 0;
 
-			if(OPCODE == alu_op)
-		  begin
+		if(OPCODE == alu_op)
+		 	 begin
 				PC_SEL <= 0;
 				//BR_SEL <= 1;
 				BR_SEL <= 0;	
 				RF_WE <= 0;
 				WB_SEL <= 0;
 				ALU_OP <= 0;
-		  end
+		  	end
   
-			if((OPCODE == bne) || (OPCODE == brr) || (OPCODE == bra))
-		  begin
+		if((OPCODE == bne) || (OPCODE == brr) || (OPCODE == bra))
+		 	 begin
 		  	RF_WE <= 0;
 				WB_SEL <= 0;
 				ALU_OP <= 2'b10;
 			end
-		end
+	end
 
   	// decode ----------------------------------
    	else if(present_state == decode) 
@@ -117,28 +117,30 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL, PC_SEL
 			//PC_SEL <= 0; 
 			
 			if(OPCODE == alu_op)
-		  begin
+		 	 begin
 				if(MM == 4'b1000)
 					RD_SEL <= 1;
 				else 
 					RD_SEL <= 0;
-		  end
+		 	 end
 			else
-			begin
+				begin
 				RD_SEL <= 0;
-			end
+				end
 		end
 
   	// execute -------------------------------
     else if(present_state == execute) 
 		begin
 			if(OPCODE == alu_op)
-		  begin
-				if(MM == 4'b1000) begin
-					$display("ALU 01");
-          ALU_OP <= 2'b01;
-				end
-				else begin 
+		 	 begin
+				if(MM == 4'b1000) 
+					begin
+						$display("ALU 01");
+          					ALU_OP <= 2'b01;
+					end
+				else 
+					begin 
 					$display("ALU 00");					
 					ALU_OP <= 2'b00;
 				end		  
@@ -146,11 +148,11 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL, PC_SEL
 		
 			if(OPCODE == bne)
 			begin
-				//$display("hello, MM=%b", MM);
+				$display("hello, MM=%b", MM);
 
 				if((MM&STAT) == 4'b0000)
 				begin
-					PC_WRITE <= 1;
+					//PC_WRITE <= 1; dont need to write here, setting present_state to fetch will write the correct instr
 					PC_SEL <= 1; //take branch
 					BR_SEL <= 1;
 					present_state <= fetch;
@@ -163,23 +165,42 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL, PC_SEL
 
 			if(OPCODE == brr)
 			begin
-				//NEVER REACHES HERE
+				$display("branching relative");
+			
+				if( (MM&STAT)!= 4'b0000 )
+					begin
+						PC_SEL <=1;
+						BR_SEL<=0; //relatvie branch
+						present_state <= fetch;
+					end
+				else 
+					begin
+						PC_SEL <= 0; //dont take branch
+					end
 			end
 
 			if(OPCODE == bra)
 			begin
-				//NEVER REACHES HERE
+				$display("branching absolute");
+			
+				if( (MM&STAT)!= 4'b0000 )
+					begin
+						PC_SEL <=1;
+						BR_SEL<=1;//absoluten branch
+						present_state <= fetch;
+					end
+				else 
+					begin
+						PC_SEL <= 0; //dont take branch
+					end
 			end
 		end
 
   	// mem --------------------------------------
     else if(present_state == mem) 
 		begin 
-			if(OPCODE == alu_op) begin
+			if(OPCODE == alu_op)
 				RF_WE <= 1;
-				BR_SEL <= 1;
-				WB_SEL <= 1;
-			end
 		end
 
   	// write back  ----------------------------------
