@@ -8,14 +8,14 @@
 80213002 //03:SUB R3 <- R2 -R1       R3=1
 62000006 //04:branch if (greater or equal to zero) to instruction 6. should skip nop
 00000000 //05: NOP!
-88010003 //06: r1 <- r1 + 3 = 4
+88010004 //06: r1 <- r1 + 3 = 4
 80215002 //07: r5 <- r2 - r1; should set negative bit in STAT reg R5 = -2
 62000017 //08: branch if (greater or equal to zero) to halt at end. should NOT branch
 80536001 //09: r6 <- r5+r3 = -1
 53000001 //0A: branch if (less than or equal to zero) should skip nop
 00000000 //0B: NOP!
 80124002 //0C: r4 <- r1 - r2 = 2
-53000001 //0D: branch if (less than or equal to zero) should NOT branch
+52000001 //0D: branch if (less than zero) should NOT branch
 00000000 //0E: NOP!
 80237001 //0F: r7 <- r2 + r3 = 3
 43000000 //10: branch if (less than or equal to zero) should NOT branch (branches to start)
@@ -23,8 +23,8 @@
 43000017 //12: branch if (less than or equal to zero) should branch to end
 00000000 //13: NOP!
 00000000 //14: NOP!
-00000000 //15
-00000000 //16
+00000000 //15: NOP!
+00000000 //16: NOP!
 F0000000 //17: HALT
 
 //8022300B //03: SHFL R3 <- R2 << [R2]
