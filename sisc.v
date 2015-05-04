@@ -9,7 +9,7 @@ module sisc (CLK, RST_F);
   //input [31:0] IR; part2 generates own IR
     
   // Datapath and control signals
-  wire [3:0] mux4_result;
+	wire [3:0] mux4_result;
 	wire [31:0] wb_data;
 	wire [31:0] rsa;
 	wire [31:0] rsb;
@@ -38,7 +38,27 @@ module sisc (CLK, RST_F);
 	wire pc_rst;
 	wire br_sel;
 
+	//part 3 additions
+	wire [16:0] mux16_result;
+	wire [31:0] memory_out;
+	wire mm_sel;
+	wire dm_we;
+	
+
   // Instantiate and connect all of the components
+	mux16 amux16( .in_a    	(alu_result[15:0]),
+			.in_b	(IR[15:0]),
+			.sel   	(mm_sel),
+			.out  (mux16_result)
+			);
+
+	dm memory(.read_addr (mux16_result), 
+		.write_addr (mux16_result), 
+		.write_data (rsb), 
+		.dm_we 	(dm_we), 
+		.read_data (memory_out)
+			);
+
   mux4 amux4   (.in_a        (IR[15:12]),
 			        	.in_b        (IR[19:16]),
 								.sel	       (rd_sel),
@@ -60,7 +80,7 @@ module sisc (CLK, RST_F);
 							.stat 	     (cc),
 							.stat_en 		 (cc_en));
 	
-	mux32	amux32  (.in_a				 (32'h00000000),
+	mux32	amux32  (.in_a				 (memory_out[31:0]),
 			        	 .in_b				 (alu_result[31:0]),
 								 .sel	       	 (wb_sel),
 			        	 .out          (wb_data));
@@ -78,10 +98,12 @@ module sisc (CLK, RST_F);
 			        	.ALU_OP		   (alu_op),
 			        	.WB_SEL      (wb_sel),
 			        	.RD_SEL			 (rd_sel),
-							  .PC_SEL 		 (pc_sel),
-							  .PC_WRITE 	 (pc_write),
-								.PC_RST 		 (pc_rst),
-								.BR_SEL 		 (br_sel));
+					.PC_SEL 		 (pc_sel),
+					.PC_WRITE 	 (pc_write),
+					.PC_RST 		 (pc_rst),
+					.BR_SEL 		 (br_sel),
+					.MM_SEL			(mm_sel),
+					.DM_WE			(dm_we));
 					
 	pc progcounter (.br_addr 	 (branch_address[15:0]),
 								  .pc_sel 	 (pc_sel), 
@@ -100,7 +122,7 @@ module sisc (CLK, RST_F);
                  
   initial
   begin
-    $monitor ($time,,," IR>: %h, PC=%h, R1=%h, R2=%h, R3=%h, RD_SEL=%b, ALU_OP=%b, WB_SEL=%b, RF_WE=%b, BR_SEL=%b, PC_WRITE=%b, PC_SEL=%b ", IR, pc_out, my_rf.ram_array[1], my_rf.ram_array[2], my_rf.ram_array[3], rd_sel, alu_op, wb_sel, rf_we, br_sel, pc_write, pc_sel); 
+    $monitor ($time,,," IR>: %h, PC=%h, R1=%h, R2=%h, R3=%h, RD_SEL=%b, ALU_OP=%b, WB_SEL=%b, RF_WE=%b, BR_SEL=%b, PC_WRITE=%b, PC_SEL=%b, DM_WE = %b, MM_SEL = %b, Memory_out = %h ", IR, pc_out, my_rf.ram_array[1], my_rf.ram_array[2], my_rf.ram_array[3], rd_sel, alu_op, wb_sel, rf_we, br_sel, pc_write, pc_sel, dm_we, mm_sel, memory_out); 
 	//Add=%h, STAT=%b,PC_IN=%b
 	//branch_address,stat_out,progcounter.pc_in 
   end 

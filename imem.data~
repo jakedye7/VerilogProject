@@ -14,8 +14,8 @@
 80536001 //09: r6 <- r5+r3 = -1
 53000001 //0A: branch if (less than or equal to zero) should skip nop
 00000000 //0B: NOP!
-80124002 //0C: r4 <- r1 - r2 = 2
-52000001 //0D: branch if (less than zero) should NOT branch
+80214002 //0C: r4 <- r1 - r2 = 2
+51000001 //0D: branch if (less than zero) should NOT branch
 00000000 //0E: NOP!
 80237001 //0F: r7 <- r2 + r3 = 3
 43000000 //10: branch if (less than or equal to zero) should NOT branch (branches to start)

@@ -1,0 +1,7 @@
+// 55:035 sisc processor project
+// Example data for the multiplication program
+//
+00000007 // :0  A = 7
+00000009 // :1  B = 9
+00000000 // :2  Addresses 2 & 3 are where the 64-bit result A*B should be stored
+00000000 // :3

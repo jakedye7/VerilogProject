@@ -32,6 +32,8 @@ entity ctrl is
         PC_SEL          : out    vl_logic;
         PC_WRITE        : out    vl_logic;
         PC_RST          : out    vl_logic;
-        BR_SEL          : out    vl_logic
+        BR_SEL          : out    vl_logic;
+        MM_SEL          : out    vl_logic;
+        DM_WE           : out    vl_logic
     );
 end ctrl;

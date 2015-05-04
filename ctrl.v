@@ -4,12 +4,12 @@
 
 `timescale 1ns/100ps
 
-module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL, PC_SEL, PC_WRITE, PC_RST, BR_SEL);
+module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL, PC_SEL, PC_WRITE, PC_RST, BR_SEL, MM_SEL, DM_WE);
   
   // inputs and outputs
   input  CLK, RST_F;
   input  [3:0] OPCODE, MM, STAT; //OPCODE = Instr[31:28], MM = Instr[27:24]
-  output reg RF_WE, WB_SEL, RD_SEL, PC_SEL, PC_WRITE, PC_RST, BR_SEL;
+  output reg RF_WE, WB_SEL, RD_SEL, PC_SEL, PC_WRITE, PC_RST, BR_SEL, MM_SEL, DM_WE;
   output reg [1:0] ALU_OP;
 	//control signals added for part 2 - pc_sel, pc_write, pc_rst, br_sel
 
