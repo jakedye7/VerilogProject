@@ -10,7 +10,7 @@
 00000000 //05: NOP!
 88010004 //06: r1 <- r1 + 3 = 4
 80215002 //07: r5 <- r2 - r1; should set negative bit in STAT reg R5 = -2
-62000017 //08: branch if (greater or equal to zero) to halt at end. should NOT branch
+62000000 //08: branch if (greater or equal to zero) to halt at end. should NOT branch
 80536001 //09: r6 <- r5+r3 = -1
 53000001 //0A: branch if (less than or equal to zero) should skip nop
 00000000 //0B: NOP!
@@ -20,12 +20,24 @@
 80237001 //0F: r7 <- r2 + r3 = 3
 43000000 //10: branch if (less than or equal to zero) should NOT branch (branches to start)
 80537001 //11: r7 <- r5 + r3 = -1
-43000017 //12: branch if (less than or equal to zero) should branch to end
+43000014 //12: branch if (less than or equal to zero) should branch to end
 00000000 //13: NOP!
 00000000 //14: NOP!
 00000000 //15: NOP!
 00000000 //16: NOP!
-F0000000 //17: HALT
+18010000 //17: load address 0 into r1  using imm; imm=0
+00000000 //18: NOP!
+10820001 //19: load address 0 into r1 using rs+imm; rs = r8 = 0; imm = 0
+00000000 //20: NOP!
+20840005 //21: store into address (imm + rs) <- rt; imm = 5, rs = r8=0;   rt = r4 = 2
+00000000 //22:
+28040006 //23: store into address(imm)<- rt; imm = 6; rt = r4 =2
+00000000
+18010005
+00000000
+18020006
+00000000
+F0000000 //20: HALT
 
 //8022300B //03: SHFL R3 <- R2 << [R2]
 //80124002 //04: SUB  R4 <- R1 - R2

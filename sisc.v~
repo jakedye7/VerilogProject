@@ -102,7 +102,7 @@ module sisc (CLK, RST_F);
 					.PC_WRITE 	 (pc_write),
 					.PC_RST 		 (pc_rst),
 					.BR_SEL 		 (br_sel),
-					.MM_SEL			(mm_sel)
+					.MM_SEL			(mm_sel),
 					.DM_WE			(dm_we));
 					
 	pc progcounter (.br_addr 	 (branch_address[15:0]),

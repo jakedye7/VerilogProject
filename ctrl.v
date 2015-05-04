@@ -83,6 +83,8 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL, PC_SEL
       PC_SEL <= 0;
       PC_RST <= 0;
       BR_SEL <= 0;
+	DM_WE <=0;
+	MM_SEL <=0;
     end
 
   	// fetch  -----------------------------------
@@ -108,6 +110,10 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL, PC_SEL
 				WB_SEL <= 0;
 				ALU_OP <= 2'b10;
 			end
+		if((OPCODE == str)||(OPCODE == lod))
+			begin	
+				BR_SEL <=0;
+			end
 	end
 
   	// decode ----------------------------------
@@ -123,10 +129,14 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL, PC_SEL
 				else 
 					RD_SEL <= 0;
 		 	 end
-			else
+			else//
 				begin
 				RD_SEL <= 0;
 				end
+			if(OPCODE == lod)
+			begin
+				RD_SEL <=1;
+			end	
 		end
 
   	// execute -------------------------------
@@ -193,13 +203,45 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL, PC_SEL
 						PC_SEL <= 0; //dont take branch
 					end
 			end
+
+			if((OPCODE == lod) && (MM == 4'b0000))//load index and rs
+				begin
+					ALU_OP<=2'b01; //use immediate instead of rt
+					MM_SEL <= 0;
+				end
+			if((OPCODE == lod) && (MM==4'b1000))//load just index
+				begin
+					ALU_OP<=2'b00;
+					MM_SEL <=1;
+				end
+			if((OPCODE == str) && (MM==4'b1000))//store into address specified by imm
+				begin
+					ALU_OP<=2'b00;
+					MM_SEL <=1;
+				end
+			if((OPCODE == str)&&( MM==4'b0000))//store into address specified by imm+rs
+				begin
+					ALU_OP<=2'b01;
+					MM_SEL <= 0;
+				end
 		end
 
   	// mem --------------------------------------
     else if(present_state == mem) 
 		begin 
 			if(OPCODE == alu_op)
-				RF_WE <= 1;
+				begin
+					RF_WE <= 1;
+				end
+			if(OPCODE == lod)
+				begin
+					WB_SEL <=1;
+				end
+			if(OPCODE == str)
+				begin
+					RF_WE <=0;
+					DM_WE <=1;
+				end
 		end
 
   	// write back  ----------------------------------
@@ -208,6 +250,11 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL, PC_SEL
 			if(OPCODE == alu_op) begin
 				
 			end
+			
+			if(OPCODE == lod)
+				begin
+					RF_WE <=1;
+				end
 		end
 
   end

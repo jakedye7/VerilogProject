@@ -37,71 +37,111 @@
 # Loading work.br
 # Refreshing /nfs/s-l011/local/vol02/m/mfina/carch/VerilogProject/work.sisc_test
 # Loading work.sisc_test
-# ** Warning: (vsim-3015) sisc.v(53): [PCDPC] - Port size (16 or 16) does not match connection size (17) for port 'out'.
-#         Region: /sisc_tb/a/amux16
-# ** Warning: (vsim-3015) sisc.v(60): [PCDPC] - Port size (16 or 16) does not match connection size (17) for port 'read_addr'.
-#         Region: /sisc_tb/a/memory
-# ** Warning: (vsim-3015) sisc.v(60): [PCDPC] - Port size (16 or 16) does not match connection size (17) for port 'write_addr'.
-#         Region: /sisc_tb/a/memory
-#                    0   IR>: 00000000, PC=0000, R1=00000000, R2=00000000, R3=00000000, RD_SEL=x, ALU_OP=xx, WB_SEL=x, RF_WE=x, BR_SEL=x, PC_WRITE=1, PC_SEL=x, DM_WE = x, MM_SEL = x, Memory_out = 0048236f 
-#                    5   IR>: 00000000, PC=0000, R1=00000000, R2=00000000, R3=00000000, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=1, PC_SEL=0, DM_WE = x, MM_SEL = x, Memory_out = 0048236f 
-#                   55   IR>: 00000000, PC=0000, R1=00000000, R2=00000000, R3=00000000, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = x, MM_SEL = x, Memory_out = 0048236f 
-#                   95   IR>: 88010001, PC=0001, R1=00000000, R2=00000000, R3=00000000, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=1, PC_SEL=0, DM_WE = x, MM_SEL = x, Memory_out = 00010133 
-#                  105   IR>: 88010001, PC=0001, R1=00000000, R2=00000000, R3=00000000, RD_SEL=1, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = x, MM_SEL = x, Memory_out = 00010133 
-#                  115   IR>: 88010001, PC=0001, R1=00000000, R2=00000000, R3=00000000, RD_SEL=1, ALU_OP=01, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = x, MM_SEL = x, Memory_out = 00010133 
-#                  125   IR>: 88010001, PC=0001, R1=00000001, R2=00000000, R3=00000000, RD_SEL=1, ALU_OP=01, WB_SEL=0, RF_WE=1, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = x, MM_SEL = x, Memory_out = 00010133 
-#                  145   IR>: 80112001, PC=0002, R1=00000001, R2=00000000, R3=00000000, RD_SEL=1, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=1, PC_SEL=0, DM_WE = x, MM_SEL = x, Memory_out = xxxxxxxx 
-#                  155   IR>: 80112001, PC=0002, R1=00000001, R2=00000000, R3=00000000, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = x, MM_SEL = x, Memory_out = xxxxxxxx 
-#                  175   IR>: 80112001, PC=0002, R1=00000001, R2=00000002, R3=00000000, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=1, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = x, MM_SEL = x, Memory_out = xxxxxxxx 
-#                  195   IR>: 80213002, PC=0003, R1=00000001, R2=00000002, R3=00000000, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=1, PC_SEL=0, DM_WE = x, MM_SEL = x, Memory_out = xxxxxxxx 
-#                  205   IR>: 80213002, PC=0003, R1=00000001, R2=00000002, R3=00000000, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = x, MM_SEL = x, Memory_out = xxxxxxxx 
-#                  225   IR>: 80213002, PC=0003, R1=00000001, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=1, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = x, MM_SEL = x, Memory_out = xxxxxxxx 
-#                  245   IR>: 62000006, PC=0004, R1=00000001, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=1, PC_SEL=0, DM_WE = x, MM_SEL = x, Memory_out = xxxxxxxx 
-#                  255   IR>: 62000006, PC=0004, R1=00000001, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = x, MM_SEL = x, Memory_out = xxxxxxxx 
+#                    0   IR>: 00000000, PC=0000, R1=00000000, R2=00000000, R3=00000000, RD_SEL=x, ALU_OP=xx, WB_SEL=x, RF_WE=x, BR_SEL=x, PC_WRITE=1, PC_SEL=x, DM_WE = x, MM_SEL = x, Memory_out = 00aaaaaa 
+#                    5   IR>: 00000000, PC=0000, R1=00000000, R2=00000000, R3=00000000, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=1, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 00aaaaaa 
+#                   55   IR>: 00000000, PC=0000, R1=00000000, R2=00000000, R3=00000000, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 00aaaaaa 
+#                   95   IR>: 88010001, PC=0001, R1=00000000, R2=00000000, R3=00000000, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=1, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 00aaaaaa 
+#                  105   IR>: 88010001, PC=0001, R1=00000000, R2=00000000, R3=00000000, RD_SEL=1, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 00aaaaaa 
+#                  115   IR>: 88010001, PC=0001, R1=00000000, R2=00000000, R3=00000000, RD_SEL=1, ALU_OP=01, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 00bbbbbb 
+#                  125   IR>: 88010001, PC=0001, R1=00000001, R2=00000000, R3=00000000, RD_SEL=1, ALU_OP=01, WB_SEL=0, RF_WE=1, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 00bbbbbb 
+#                  145   IR>: 80112001, PC=0002, R1=00000001, R2=00000000, R3=00000000, RD_SEL=1, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=1, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 11223344 
+#                  155   IR>: 80112001, PC=0002, R1=00000001, R2=00000000, R3=00000000, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 11223344 
+#                  175   IR>: 80112001, PC=0002, R1=00000001, R2=00000002, R3=00000000, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=1, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 11223344 
+#                  195   IR>: 80213002, PC=0003, R1=00000001, R2=00000002, R3=00000000, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=1, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 00bbbbbb 
+#                  205   IR>: 80213002, PC=0003, R1=00000001, R2=00000002, R3=00000000, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 00bbbbbb 
+#                  225   IR>: 80213002, PC=0003, R1=00000001, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=1, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 00bbbbbb 
+#                  245   IR>: 62000006, PC=0004, R1=00000001, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=1, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 00aaaaaa 
+#                  255   IR>: 62000006, PC=0004, R1=00000001, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 00aaaaaa 
 # branching negative
-#                  265   IR>: 62000006, PC=0004, R1=00000001, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=1, PC_WRITE=0, PC_SEL=1, DM_WE = x, MM_SEL = x, Memory_out = xxxxxxxx 
-#                  275   IR>: 88010004, PC=0006, R1=00000001, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=10, WB_SEL=0, RF_WE=0, BR_SEL=1, PC_WRITE=1, PC_SEL=0, DM_WE = x, MM_SEL = x, Memory_out = xxxxxxxx 
-#                  285   IR>: 88010004, PC=0006, R1=00000001, R2=00000002, R3=00000001, RD_SEL=1, ALU_OP=10, WB_SEL=0, RF_WE=0, BR_SEL=1, PC_WRITE=0, PC_SEL=0, DM_WE = x, MM_SEL = x, Memory_out = xxxxxxxx 
-#                  295   IR>: 88010004, PC=0006, R1=00000001, R2=00000002, R3=00000001, RD_SEL=1, ALU_OP=01, WB_SEL=0, RF_WE=0, BR_SEL=1, PC_WRITE=0, PC_SEL=0, DM_WE = x, MM_SEL = x, Memory_out = xxxxxxxx 
-#                  305   IR>: 88010004, PC=0006, R1=00000004, R2=00000002, R3=00000001, RD_SEL=1, ALU_OP=01, WB_SEL=0, RF_WE=1, BR_SEL=1, PC_WRITE=0, PC_SEL=0, DM_WE = x, MM_SEL = x, Memory_out = xxxxxxxx 
-#                  325   IR>: 80215002, PC=0007, R1=00000004, R2=00000002, R3=00000001, RD_SEL=1, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=1, PC_SEL=0, DM_WE = x, MM_SEL = x, Memory_out = xxxxxxxx 
-#                  335   IR>: 80215002, PC=0007, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = x, MM_SEL = x, Memory_out = xxxxxxxx 
-#                  355   IR>: 80215002, PC=0007, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=1, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = x, MM_SEL = x, Memory_out = xxxxxxxx 
-#                  375   IR>: 62000017, PC=0008, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=1, PC_SEL=0, DM_WE = x, MM_SEL = x, Memory_out = xxxxxxxx 
-#                  385   IR>: 62000017, PC=0008, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = x, MM_SEL = x, Memory_out = xxxxxxxx 
+#                  265   IR>: 62000006, PC=0004, R1=00000001, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=1, PC_WRITE=0, PC_SEL=1, DM_WE = 0, MM_SEL = 0, Memory_out = 00aaaaaa 
+#                  275   IR>: 88010004, PC=0006, R1=00000001, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=10, WB_SEL=0, RF_WE=0, BR_SEL=1, PC_WRITE=1, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = xxxxxxxx 
+#                  285   IR>: 88010004, PC=0006, R1=00000001, R2=00000002, R3=00000001, RD_SEL=1, ALU_OP=10, WB_SEL=0, RF_WE=0, BR_SEL=1, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = xxxxxxxx 
+#                  295   IR>: 88010004, PC=0006, R1=00000001, R2=00000002, R3=00000001, RD_SEL=1, ALU_OP=01, WB_SEL=0, RF_WE=0, BR_SEL=1, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 00000000 
+#                  305   IR>: 88010004, PC=0006, R1=00000004, R2=00000002, R3=00000001, RD_SEL=1, ALU_OP=01, WB_SEL=0, RF_WE=1, BR_SEL=1, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 00000000 
+#                  325   IR>: 80215002, PC=0007, R1=00000004, R2=00000002, R3=00000001, RD_SEL=1, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=1, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = xxxxxxxx 
+#                  335   IR>: 80215002, PC=0007, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = xxxxxxxx 
+#                  355   IR>: 80215002, PC=0007, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=1, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = xxxxxxxx 
+#                  375   IR>: 62000000, PC=0008, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=1, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 00aaaaaa 
+#                  385   IR>: 62000000, PC=0008, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 00aaaaaa 
 # branching negative fail
-#                  425   IR>: 80536001, PC=0009, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=10, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=1, PC_SEL=0, DM_WE = x, MM_SEL = x, Memory_out = xxxxxxxx 
-#                  435   IR>: 80536001, PC=0009, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=10, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = x, MM_SEL = x, Memory_out = xxxxxxxx 
-#                  445   IR>: 80536001, PC=0009, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = x, MM_SEL = x, Memory_out = xxxxxxxx 
-#                  455   IR>: 80536001, PC=0009, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=1, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = x, MM_SEL = x, Memory_out = xxxxxxxx 
-#                  475   IR>: 53000001, PC=000a, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=1, PC_SEL=0, DM_WE = x, MM_SEL = x, Memory_out = 00010133 
-#                  485   IR>: 53000001, PC=000a, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = x, MM_SEL = x, Memory_out = 00010133 
+#                  425   IR>: 80536001, PC=0009, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=10, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=1, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = xxxxxxxx 
+#                  435   IR>: 80536001, PC=0009, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=10, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = xxxxxxxx 
+#                  445   IR>: 80536001, PC=0009, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = xxxxxxxx 
+#                  455   IR>: 80536001, PC=0009, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=1, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = xxxxxxxx 
+#                  475   IR>: 53000001, PC=000a, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=1, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 00aaaaaa 
+#                  485   IR>: 53000001, PC=000a, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 00aaaaaa 
 # branching relative
-#                  495   IR>: 53000001, PC=000a, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=1, DM_WE = x, MM_SEL = x, Memory_out = 00010133 
-#                  505   IR>: 80124002, PC=000c, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=10, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=1, PC_SEL=0, DM_WE = x, MM_SEL = x, Memory_out = xxxxxxxx 
-#                  515   IR>: 80124002, PC=000c, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=10, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = x, MM_SEL = x, Memory_out = xxxxxxxx 
-#                  525   IR>: 80124002, PC=000c, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = x, MM_SEL = x, Memory_out = xxxxxxxx 
-#                  535   IR>: 80124002, PC=000c, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=1, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = x, MM_SEL = x, Memory_out = xxxxxxxx 
-#                  555   IR>: 52000001, PC=000d, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=1, PC_SEL=0, DM_WE = x, MM_SEL = x, Memory_out = 00010133 
-#                  565   IR>: 52000001, PC=000d, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = x, MM_SEL = x, Memory_out = 00010133 
+#                  495   IR>: 53000001, PC=000a, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=1, DM_WE = 0, MM_SEL = 0, Memory_out = 00aaaaaa 
+#                  505   IR>: 80124002, PC=000c, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=10, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=1, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 11223344 
+#                  515   IR>: 80124002, PC=000c, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=10, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 11223344 
+#                  525   IR>: 80124002, PC=000c, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 11223344 
+#                  535   IR>: 80124002, PC=000c, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=1, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 11223344 
+#                  555   IR>: 52000001, PC=000d, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=1, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 00aaaaaa 
+#                  565   IR>: 52000001, PC=000d, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 00aaaaaa 
 # branching relative fail
-#                  605   IR>: 00000000, PC=000e, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=10, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=1, PC_SEL=0, DM_WE = x, MM_SEL = x, Memory_out = 0048236f 
-#                  615   IR>: 00000000, PC=000e, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = x, MM_SEL = x, Memory_out = 0048236f 
-#                  655   IR>: 80237001, PC=000f, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=1, PC_SEL=0, DM_WE = x, MM_SEL = x, Memory_out = xxxxxxxx 
-#                  665   IR>: 80237001, PC=000f, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = x, MM_SEL = x, Memory_out = xxxxxxxx 
-#                  685   IR>: 80237001, PC=000f, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=1, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = x, MM_SEL = x, Memory_out = xxxxxxxx 
-#                  705   IR>: 43000000, PC=0010, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=1, PC_SEL=0, DM_WE = x, MM_SEL = x, Memory_out = 0048236f 
-#                  715   IR>: 43000000, PC=0010, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = x, MM_SEL = x, Memory_out = 0048236f 
+#                  605   IR>: 00000000, PC=000e, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=10, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=1, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 00aaaaaa 
+#                  615   IR>: 00000000, PC=000e, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 00aaaaaa 
+#                  655   IR>: 80237001, PC=000f, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=1, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 0908070c 
+#                  665   IR>: 80237001, PC=000f, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 0908070c 
+#                  685   IR>: 80237001, PC=000f, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=1, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 0908070c 
+#                  705   IR>: 43000000, PC=0010, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=1, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 00aaaaaa 
+#                  715   IR>: 43000000, PC=0010, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 00aaaaaa 
 # branching absolute fail
-#                  755   IR>: 80537001, PC=0011, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=10, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=1, PC_SEL=0, DM_WE = x, MM_SEL = x, Memory_out = xxxxxxxx 
-#                  765   IR>: 80537001, PC=0011, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=10, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = x, MM_SEL = x, Memory_out = xxxxxxxx 
-#                  775   IR>: 80537001, PC=0011, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = x, MM_SEL = x, Memory_out = xxxxxxxx 
-#                  785   IR>: 80537001, PC=0011, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=1, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = x, MM_SEL = x, Memory_out = xxxxxxxx 
-#                  805   IR>: 43000017, PC=0012, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=1, PC_SEL=0, DM_WE = x, MM_SEL = x, Memory_out = xxxxxxxx 
-#                  815   IR>: 43000017, PC=0012, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = x, MM_SEL = x, Memory_out = xxxxxxxx 
+#                  755   IR>: 80537001, PC=0011, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=10, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=1, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = xxxxxxxx 
+#                  765   IR>: 80537001, PC=0011, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=10, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = xxxxxxxx 
+#                  775   IR>: 80537001, PC=0011, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = xxxxxxxx 
+#                  785   IR>: 80537001, PC=0011, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=1, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = xxxxxxxx 
+#                  805   IR>: 43000014, PC=0012, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=1, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = xxxxxxxx 
+#                  815   IR>: 43000014, PC=0012, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = xxxxxxxx 
 # branching absolute
-#                  825   IR>: 43000017, PC=0012, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=1, PC_WRITE=0, PC_SEL=1, DM_WE = x, MM_SEL = x, Memory_out = xxxxxxxx 
-#                  835   IR>: f0000000, PC=0017, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=10, WB_SEL=0, RF_WE=0, BR_SEL=1, PC_WRITE=1, PC_SEL=0, DM_WE = x, MM_SEL = x, Memory_out = 0048236f 
+#                  825   IR>: 43000014, PC=0012, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=1, PC_WRITE=0, PC_SEL=1, DM_WE = 0, MM_SEL = 0, Memory_out = xxxxxxxx 
+#                  835   IR>: 00000000, PC=0014, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=10, WB_SEL=0, RF_WE=0, BR_SEL=1, PC_WRITE=1, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 00aaaaaa 
+#                  845   IR>: 00000000, PC=0014, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 00aaaaaa 
+#                  885   IR>: 00000000, PC=0015, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=1, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 00aaaaaa 
+#                  895   IR>: 00000000, PC=0015, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 00aaaaaa 
+#                  935   IR>: 00000000, PC=0016, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=1, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 00aaaaaa 
+#                  945   IR>: 00000000, PC=0016, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 00aaaaaa 
+#                  985   IR>: 18010000, PC=0017, R1=00000004, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=1, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 00000000 
+#                  995   IR>: 18010000, PC=0017, R1=00000004, R2=00000002, R3=00000001, RD_SEL=1, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 00000000 
+#                 1005   IR>: 18010000, PC=0017, R1=00000004, R2=00000002, R3=00000001, RD_SEL=1, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 1, Memory_out = 00aaaaaa 
+#                 1015   IR>: 18010000, PC=0017, R1=00000004, R2=00000002, R3=00000001, RD_SEL=1, ALU_OP=00, WB_SEL=1, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 1, Memory_out = 00aaaaaa 
+#                 1025   IR>: 18010000, PC=0017, R1=00aaaaaa, R2=00000002, R3=00000001, RD_SEL=1, ALU_OP=00, WB_SEL=1, RF_WE=1, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 1, Memory_out = 00aaaaaa 
+#                 1035   IR>: 00000000, PC=0018, R1=00aaaaaa, R2=00000002, R3=00000001, RD_SEL=1, ALU_OP=00, WB_SEL=1, RF_WE=1, BR_SEL=0, PC_WRITE=1, PC_SEL=0, DM_WE = 0, MM_SEL = 1, Memory_out = 00aaaaaa 
+#                 1045   IR>: 00000000, PC=0018, R1=00aaaaaa, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 00aaaaaa 
+#                 1085   IR>: 10820001, PC=0019, R1=00aaaaaa, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=1, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 11223344 
+#                 1095   IR>: 10820001, PC=0019, R1=00aaaaaa, R2=00000002, R3=00000001, RD_SEL=1, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 11223344 
+#                 1105   IR>: 10820001, PC=0019, R1=00aaaaaa, R2=00000002, R3=00000001, RD_SEL=1, ALU_OP=01, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 00bbbbbb 
+#                 1115   IR>: 10820001, PC=0019, R1=00aaaaaa, R2=00000002, R3=00000001, RD_SEL=1, ALU_OP=01, WB_SEL=1, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 00bbbbbb 
+#                 1125   IR>: 10820001, PC=0019, R1=00aaaaaa, R2=00bbbbbb, R3=00000001, RD_SEL=1, ALU_OP=01, WB_SEL=1, RF_WE=1, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 00bbbbbb 
+#                 1135   IR>: 00000000, PC=001a, R1=00aaaaaa, R2=00bbbbbb, R3=00000001, RD_SEL=1, ALU_OP=01, WB_SEL=1, RF_WE=1, BR_SEL=0, PC_WRITE=1, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 00aaaaaa 
+#                 1145   IR>: 00000000, PC=001a, R1=00aaaaaa, R2=00bbbbbb, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 00aaaaaa 
+#                 1185   IR>: 20840005, PC=001b, R1=00aaaaaa, R2=00bbbbbb, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=1, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 11223344 
+#                 1195   IR>: 20840005, PC=001b, R1=00aaaaaa, R2=00bbbbbb, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 11223344 
+#                 1205   IR>: 20840005, PC=001b, R1=00aaaaaa, R2=00bbbbbb, R3=00000001, RD_SEL=0, ALU_OP=01, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 00000000 
+#                 1215   IR>: 20840005, PC=001b, R1=00aaaaaa, R2=00bbbbbb, R3=00000001, RD_SEL=0, ALU_OP=01, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 1, MM_SEL = 0, Memory_out = 00000000 
+#                 1235   IR>: 00000000, PC=001c, R1=00aaaaaa, R2=00bbbbbb, R3=00000001, RD_SEL=0, ALU_OP=01, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=1, PC_SEL=0, DM_WE = 1, MM_SEL = 0, Memory_out = 00aaaaaa 
+#                 1245   IR>: 00000000, PC=001c, R1=00aaaaaa, R2=00bbbbbb, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 00aaaaaa 
+#                 1285   IR>: 28040006, PC=001d, R1=00aaaaaa, R2=00bbbbbb, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=1, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 00aaaaaa 
+#                 1295   IR>: 28040006, PC=001d, R1=00aaaaaa, R2=00bbbbbb, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 00aaaaaa 
+#                 1305   IR>: 28040006, PC=001d, R1=00aaaaaa, R2=00bbbbbb, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 1, Memory_out = xxxxxxxx 
+#                 1315   IR>: 28040006, PC=001d, R1=00aaaaaa, R2=00bbbbbb, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 1, MM_SEL = 1, Memory_out = xxxxxxxx 
+#                 1335   IR>: 00000000, PC=001e, R1=00aaaaaa, R2=00bbbbbb, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=1, PC_SEL=0, DM_WE = 1, MM_SEL = 1, Memory_out = 00aaaaaa 
+#                 1345   IR>: 00000000, PC=001e, R1=00aaaaaa, R2=00bbbbbb, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 00aaaaaa 
+#                 1385   IR>: 18010005, PC=001f, R1=00aaaaaa, R2=00bbbbbb, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=1, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = xxxxxxxx 
+#                 1395   IR>: 18010005, PC=001f, R1=00aaaaaa, R2=00bbbbbb, R3=00000001, RD_SEL=1, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = xxxxxxxx 
+#                 1405   IR>: 18010005, PC=001f, R1=00aaaaaa, R2=00bbbbbb, R3=00000001, RD_SEL=1, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 1, Memory_out = 00000002 
+#                 1415   IR>: 18010005, PC=001f, R1=00aaaaaa, R2=00bbbbbb, R3=00000001, RD_SEL=1, ALU_OP=00, WB_SEL=1, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 1, Memory_out = 00000002 
+#                 1425   IR>: 18010005, PC=001f, R1=00000002, R2=00bbbbbb, R3=00000001, RD_SEL=1, ALU_OP=00, WB_SEL=1, RF_WE=1, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 1, Memory_out = 00000002 
+#                 1435   IR>: 00000000, PC=0020, R1=00000002, R2=00bbbbbb, R3=00000001, RD_SEL=1, ALU_OP=00, WB_SEL=1, RF_WE=1, BR_SEL=0, PC_WRITE=1, PC_SEL=0, DM_WE = 0, MM_SEL = 1, Memory_out = 00aaaaaa 
+#                 1445   IR>: 00000000, PC=0020, R1=00000002, R2=00bbbbbb, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 00aaaaaa 
+#                 1485   IR>: 18020006, PC=0021, R1=00000002, R2=00bbbbbb, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=1, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 00aaaaaa 
+#                 1495   IR>: 18020006, PC=0021, R1=00000002, R2=00bbbbbb, R3=00000001, RD_SEL=1, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 00aaaaaa 
+#                 1505   IR>: 18020006, PC=0021, R1=00000002, R2=00bbbbbb, R3=00000001, RD_SEL=1, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 1, Memory_out = 00000002 
+#                 1515   IR>: 18020006, PC=0021, R1=00000002, R2=00bbbbbb, R3=00000001, RD_SEL=1, ALU_OP=00, WB_SEL=1, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 1, Memory_out = 00000002 
+#                 1525   IR>: 18020006, PC=0021, R1=00000002, R2=00000002, R3=00000001, RD_SEL=1, ALU_OP=00, WB_SEL=1, RF_WE=1, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 1, Memory_out = 00000002 
+#                 1535   IR>: 00000000, PC=0022, R1=00000002, R2=00000002, R3=00000001, RD_SEL=1, ALU_OP=00, WB_SEL=1, RF_WE=1, BR_SEL=0, PC_WRITE=1, PC_SEL=0, DM_WE = 0, MM_SEL = 1, Memory_out = 00aaaaaa 
+#                 1545   IR>: 00000000, PC=0022, R1=00000002, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=0, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 00aaaaaa 
+#                 1585   IR>: f0000000, PC=0023, R1=00000002, R2=00000002, R3=00000001, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=1, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 00aaaaaa 
 # Halt.
 # Break in Module ctrl at ctrl.v line 67
 # Stopped at ctrl.v line 67 

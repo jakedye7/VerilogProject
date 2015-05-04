@@ -39,7 +39,7 @@ module sisc (CLK, RST_F);
 	wire br_sel;
 
 	//part 3 additions
-	wire [16:0] mux16_result;
+	wire [15:0] mux16_result;
 	wire [31:0] memory_out;
 	wire mm_sel;
 	wire dm_we;
