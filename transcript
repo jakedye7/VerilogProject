@@ -9,33 +9,20 @@
 # //  OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
 # //  AND IS SUBJECT TO LICENSE TERMS.
 # //
-# Refreshing /nfs/s-l011/local/vol02/m/mfina/carch/VerilogProject/work.sisc_tb
 # Loading work.sisc_tb
-# Refreshing /nfs/s-l011/local/vol02/m/mfina/carch/VerilogProject/work.sisc
 # Loading work.sisc
-# Refreshing /nfs/s-l011/local/vol02/m/mfina/carch/VerilogProject/work.mux16
 # Loading work.mux16
-# Refreshing /nfs/s-l011/local/vol02/m/mfina/carch/VerilogProject/work.dm
 # Loading work.dm
-# Refreshing /nfs/s-l011/local/vol02/m/mfina/carch/VerilogProject/work.mux4
 # Loading work.mux4
-# Refreshing /nfs/s-l011/local/vol02/m/mfina/carch/VerilogProject/work.rf
 # Loading work.rf
-# Refreshing /nfs/s-l011/local/vol02/m/mfina/carch/VerilogProject/work.alu
 # Loading work.alu
-# Refreshing /nfs/s-l011/local/vol02/m/mfina/carch/VerilogProject/work.mux32
 # Loading work.mux32
-# Refreshing /nfs/s-l011/local/vol02/m/mfina/carch/VerilogProject/work.statreg
 # Loading work.statreg
-# Refreshing /nfs/s-l011/local/vol02/m/mfina/carch/VerilogProject/work.ctrl
+# Refreshing /nfs/s-l011/local/vol01/j/jbdye/VerilogProject/work.ctrl
 # Loading work.ctrl
-# Refreshing /nfs/s-l011/local/vol02/m/mfina/carch/VerilogProject/work.pc
 # Loading work.pc
-# Refreshing /nfs/s-l011/local/vol02/m/mfina/carch/VerilogProject/work.im
 # Loading work.im
-# Refreshing /nfs/s-l011/local/vol02/m/mfina/carch/VerilogProject/work.br
 # Loading work.br
-# Refreshing /nfs/s-l011/local/vol02/m/mfina/carch/VerilogProject/work.sisc_test
 # Loading work.sisc_test
 #                    0   IR>: 00000000, PC=0000, R1=00000000, R2=00000000, R3=00000000, RD_SEL=x, ALU_OP=xx, WB_SEL=x, RF_WE=x, BR_SEL=x, PC_WRITE=1, PC_SEL=x, DM_WE = x, MM_SEL = x, Memory_out = 00aaaaaa 
 #                    5   IR>: 00000000, PC=0000, R1=00000000, R2=00000000, R3=00000000, RD_SEL=0, ALU_OP=00, WB_SEL=0, RF_WE=0, BR_SEL=0, PC_WRITE=1, PC_SEL=0, DM_WE = 0, MM_SEL = 0, Memory_out = 00aaaaaa 

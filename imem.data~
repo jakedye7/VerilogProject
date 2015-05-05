@@ -1,6 +1,6 @@
 // 55:035 sisc processor project
 // Jacob Dye & Matt Fina
-//	instructions for part 2
+//	instructions for part 3
 //
 00000000 //00: NOP!
 88010001 //01: ADDI R1 <- R0 + (0x0000)0001 
@@ -29,14 +29,14 @@
 00000000 //18: NOP!
 10820001 //19: load address 0 into r1 using rs+imm; rs = r8 = 0; imm = 0
 00000000 //20: NOP!
-20840007 //21: store into address (imm + rs) <- rt; imm = 5, rs = r8=0;   rt = r4 = 2
-00000000 //22:
-28040008 //23: store into address(imm)<- rt; imm = 6; rt = r4 =2
-00000000
+20840005 //21: store into address (imm + rs) <- rt; imm = 5, rs = r8=0;   rt = r4 = 2
+00000000 //22: NOP!
+28040006 //23: store into address(imm)<- rt; imm = 6; rt = r4 =2
+00000000 //24: NOP!
 18010005
-00000000
+00000000 //26: NOP!
 18020006
-00000000
+00000000 //28: NOP!
 F0000000 //20: HALT
 
 //8022300B //03: SHFL R3 <- R2 << [R2]
