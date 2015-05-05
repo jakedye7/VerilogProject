@@ -4,12 +4,12 @@
 
 `timescale 1ns/100ps
 
-module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL, PC_SEL, PC_WRITE, PC_RST, BR_SEL, MM_SEL, DM_WE, SWAP_MUX, SWAP_DATA, SWAP_REG);
+module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL, PC_SEL, PC_WRITE, PC_RST, BR_SEL, MM_SEL, DM_WE, SWAP_MUX, SWAP_DATA, SWAP_REG, SWAP_EN);
   
   // inputs and outputs
   input  CLK, RST_F;
   input  [3:0] OPCODE, MM, STAT; //OPCODE = Instr[31:28], MM = Instr[27:24]
-  output reg RF_WE, WB_SEL, PC_SEL, PC_WRITE, PC_RST, BR_SEL, MM_SEL, DM_WE,SWAP_MUX, SWAP_DATA, SWAP_REG;
+  output reg RF_WE, WB_SEL, PC_SEL, PC_WRITE, PC_RST, BR_SEL, MM_SEL, DM_WE,SWAP_MUX, SWAP_DATA, SWAP_REG, SWAP_EN;
   output reg [1:0] ALU_OP;
   output reg [1:0] RD_SEL;
 	//control signals added for part 2 - pc_sel, pc_write, pc_rst, br_sel
@@ -89,6 +89,7 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL, PC_SEL
 	SWAP_MUX <=0;
 	//SWAP_DATA <=1;
 	//SWAP_REG <=1;
+	SWAP_EN<=0;
     end
 
   	// fetch  -----------------------------------
@@ -125,16 +126,13 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL, PC_SEL
 	
 			if(OPCODE == swap)
 			begin
-				
-				
-				$display("fetch");
 				RF_WE <=0;
 				BR_SEL <= 0;
 				ALU_OP <= 2'b10;
 				SWAP_MUX <=0;
 				SWAP_DATA <=1;
 				SWAP_REG <=1;
-
+				SWAP_EN <=1;
 				
 			end
 		end
@@ -162,10 +160,7 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL, PC_SEL
 			end
 			if(OPCODE == swap)
 			begin	
-				
-				//RF_WE <=0;
-				
-				$display("decode");
+				SWAP_EN <=1;
 				RD_SEL<=2'b10;
 				SWAP_MUX =1;
 
@@ -246,8 +241,6 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL, PC_SEL
 
 			if(OPCODE==swap)
 			begin
-				
-				$display("execute");
 				RF_WE = 1;	
 				SWAP_MUX=0;
 				
@@ -278,8 +271,6 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL, PC_SEL
 
 			if(OPCODE==swap)
 			begin
-				
-				$display("mem");
 				SWAP_MUX=1;
 				RF_WE=0;
 				//SWAP_REG=1'b0;
@@ -302,8 +293,7 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL, PC_SEL
 			end
 			if(OPCODE==swap)
 			begin
-				RF_WE=1;
-				$display("writeback");			
+				RF_WE=1;		
 				//SWAP_REG=1'b0;
 				//SWAP_DATA=1'b0;
 				

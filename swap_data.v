@@ -3,7 +3,7 @@
 
 `timescale 1ns/100ps
 
-module swap_data(a_input,b_input, out_sel, data_out);
+module swap_data(a_input,b_input, out_sel, swap_en, data_out);
 
 /**
 * SWAP DATA REGISTER FILE - swap_data.v
@@ -19,19 +19,32 @@ module swap_data(a_input,b_input, out_sel, data_out);
 input [31:0] a_input;
 input [31:0] b_input;
 input out_sel;
+input swap_en;
+
+reg[31:0] a_reg;
+reg[31:0] b_reg;
 
 output [31:0] data_out;
 reg [31:0] data_out;
 
-always @ (a_input,b_input, out_sel)
+always @ (out_sel)
 begin
 	if(out_sel == 1'b1)
 	begin
-		data_out <= b_input;
+		assign data_out = b_reg;
 	end
 	if(out_sel == 1'b0)
 	begin
-		data_out <= a_input;
+		assign data_out = a_reg;
+	end
+end
+
+always @(swap_en)
+begin 
+	if(swap_en == 1)
+	begin
+		a_reg<=a_input;
+		b_reg<=b_input;
 	end
 end
 

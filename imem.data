@@ -29,7 +29,7 @@
 00000000 //18: NOP!
 10820001 //19: load address 0 into r2 using rs+imm; rs = r8 = 0; imm = 0
 00000000 //20: NOP!
-30121000 //21: SWAP r1, r2
+30131000 //21: SWAP r1, r2
 00000000
 20840005 //21: store into address (imm + rs) <- rt; imm = 5, rs = r8 = 0; rt = r4 = 2
 00000000 //22: NOP!

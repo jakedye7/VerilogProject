@@ -41,90 +41,86 @@
 # Loading work.br
 # Refreshing /nfs/s-l011/local/vol02/m/mfina/carch/VerilogProject/work.sisc_test
 # Loading work.sisc_test
-#                    0 IR>: 00000000, R1=00000000, R2=00000000, Data_swapped = xxxxxxxx swap_mux_data=00000000, wb_data=00000000, swap_reg=x, RF_WE=x write_reg=x, RD_SEL=xx, SWAP_DATA=x, SWAP_REG = x
-#                    5 IR>: 00000000, R1=00000000, R2=00000000, Data_swapped = xxxxxxxx swap_mux_data=00000000, wb_data=00000000, swap_reg=x, RF_WE=0 write_reg=0, RD_SEL=00, SWAP_DATA=x, SWAP_REG = x
-#                   45 IR>: 00000000, R1=00000000, R2=00000000, Data_swapped = 00000000 swap_mux_data=00000000, wb_data=00000000, swap_reg=0, RF_WE=0 write_reg=0, RD_SEL=00, SWAP_DATA=0, SWAP_REG = 0
-#                   95 IR>: 88010001, R1=00000000, R2=00000000, Data_swapped = 00000000 swap_mux_data=00000000, wb_data=00000000, swap_reg=1, RF_WE=0 write_reg=0, RD_SEL=00, SWAP_DATA=0, SWAP_REG = 0
-#                  105 IR>: 88010001, R1=00000000, R2=00000000, Data_swapped = 00000000 swap_mux_data=00000000, wb_data=00000000, swap_reg=1, RF_WE=0 write_reg=1, RD_SEL=01, SWAP_DATA=0, SWAP_REG = 0
-#                  115 IR>: 88010001, R1=00000000, R2=00000000, Data_swapped = 00000000 swap_mux_data=00000001, wb_data=00000001, swap_reg=1, RF_WE=0 write_reg=1, RD_SEL=01, SWAP_DATA=0, SWAP_REG = 0
-#                  125 IR>: 88010001, R1=00000001, R2=00000000, Data_swapped = 00000000 swap_mux_data=00000001, wb_data=00000001, swap_reg=1, RF_WE=1 write_reg=1, RD_SEL=01, SWAP_DATA=0, SWAP_REG = 0
-#                  145 IR>: 80112001, R1=00000001, R2=00000000, Data_swapped = 00000001 swap_mux_data=00000002, wb_data=00000002, swap_reg=1, RF_WE=0 write_reg=1, RD_SEL=01, SWAP_DATA=0, SWAP_REG = 0
-#                  155 IR>: 80112001, R1=00000001, R2=00000000, Data_swapped = 00000001 swap_mux_data=00000002, wb_data=00000002, swap_reg=1, RF_WE=0 write_reg=2, RD_SEL=00, SWAP_DATA=0, SWAP_REG = 0
-#                  175 IR>: 80112001, R1=00000001, R2=00000002, Data_swapped = 00000001 swap_mux_data=00000002, wb_data=00000002, swap_reg=1, RF_WE=1 write_reg=2, RD_SEL=00, SWAP_DATA=0, SWAP_REG = 0
-#                  195 IR>: 80213002, R1=00000001, R2=00000002, Data_swapped = 00000002 swap_mux_data=00000001, wb_data=00000001, swap_reg=1, RF_WE=0 write_reg=3, RD_SEL=00, SWAP_DATA=0, SWAP_REG = 0
-#                  225 IR>: 80213002, R1=00000001, R2=00000002, Data_swapped = 00000002 swap_mux_data=00000001, wb_data=00000001, swap_reg=1, RF_WE=1 write_reg=3, RD_SEL=00, SWAP_DATA=0, SWAP_REG = 0
-#                  245 IR>: 62000006, R1=00000001, R2=00000002, Data_swapped = 00000000 swap_mux_data=00000000, wb_data=00000000, swap_reg=0, RF_WE=0 write_reg=0, RD_SEL=00, SWAP_DATA=0, SWAP_REG = 0
+#                    0 IR>: 00000000, R1=00000000, R2=00000000, R3=00000000, Data_swapped = xxxxxxxx swap_mux_data=00000000, wb_data=00000000, swap_reg=x, RF_WE=x write_reg=xx
+#                    5 IR>: 00000000, R1=00000000, R2=00000000, R3=00000000, Data_swapped = xxxxxxxx swap_mux_data=00000000, wb_data=00000000, swap_reg=x, RF_WE=0 write_reg=00
+#                   45 IR>: 00000000, R1=00000000, R2=00000000, R3=00000000, Data_swapped = xxxxxxxx swap_mux_data=00000000, wb_data=00000000, swap_reg=0, RF_WE=0 write_reg=00
+#                   95 IR>: 88010001, R1=00000000, R2=00000000, R3=00000000, Data_swapped = xxxxxxxx swap_mux_data=00000000, wb_data=00000000, swap_reg=1, RF_WE=0 write_reg=00
+#                  105 IR>: 88010001, R1=00000000, R2=00000000, R3=00000000, Data_swapped = xxxxxxxx swap_mux_data=00000000, wb_data=00000000, swap_reg=1, RF_WE=0 write_reg=11
+#                  115 IR>: 88010001, R1=00000000, R2=00000000, R3=00000000, Data_swapped = xxxxxxxx swap_mux_data=00000001, wb_data=00000001, swap_reg=1, RF_WE=0 write_reg=11
+#                  125 IR>: 88010001, R1=00000001, R2=00000000, R3=00000000, Data_swapped = xxxxxxxx swap_mux_data=00000001, wb_data=00000001, swap_reg=1, RF_WE=1 write_reg=11
+#                  145 IR>: 80112001, R1=00000001, R2=00000000, R3=00000000, Data_swapped = xxxxxxxx swap_mux_data=00000002, wb_data=00000002, swap_reg=1, RF_WE=0 write_reg=11
+#                  155 IR>: 80112001, R1=00000001, R2=00000000, R3=00000000, Data_swapped = xxxxxxxx swap_mux_data=00000002, wb_data=00000002, swap_reg=1, RF_WE=0 write_reg=20
+#                  175 IR>: 80112001, R1=00000001, R2=00000002, R3=00000000, Data_swapped = xxxxxxxx swap_mux_data=00000002, wb_data=00000002, swap_reg=1, RF_WE=1 write_reg=20
+#                  195 IR>: 80213002, R1=00000001, R2=00000002, R3=00000000, Data_swapped = xxxxxxxx swap_mux_data=00000001, wb_data=00000001, swap_reg=1, RF_WE=0 write_reg=30
+#                  225 IR>: 80213002, R1=00000001, R2=00000002, R3=00000001, Data_swapped = xxxxxxxx swap_mux_data=00000001, wb_data=00000001, swap_reg=1, RF_WE=1 write_reg=30
+#                  245 IR>: 62000006, R1=00000001, R2=00000002, R3=00000001, Data_swapped = xxxxxxxx swap_mux_data=00000000, wb_data=00000000, swap_reg=0, RF_WE=0 write_reg=00
 # branching negative
-#                  275 IR>: 88010004, R1=00000001, R2=00000002, Data_swapped = 00000000 swap_mux_data=ffffffff, wb_data=ffffffff, swap_reg=1, RF_WE=0 write_reg=0, RD_SEL=00, SWAP_DATA=0, SWAP_REG = 0
-#                  285 IR>: 88010004, R1=00000001, R2=00000002, Data_swapped = 00000000 swap_mux_data=ffffffff, wb_data=ffffffff, swap_reg=1, RF_WE=0 write_reg=1, RD_SEL=01, SWAP_DATA=0, SWAP_REG = 0
-#                  295 IR>: 88010004, R1=00000001, R2=00000002, Data_swapped = 00000000 swap_mux_data=00000004, wb_data=00000004, swap_reg=1, RF_WE=0 write_reg=1, RD_SEL=01, SWAP_DATA=0, SWAP_REG = 0
-#                  305 IR>: 88010004, R1=00000004, R2=00000002, Data_swapped = 00000000 swap_mux_data=00000004, wb_data=00000004, swap_reg=1, RF_WE=1 write_reg=1, RD_SEL=01, SWAP_DATA=0, SWAP_REG = 0
-#                  325 IR>: 80215002, R1=00000004, R2=00000002, Data_swapped = 00000002 swap_mux_data=fffffffe, wb_data=fffffffe, swap_reg=1, RF_WE=0 write_reg=1, RD_SEL=01, SWAP_DATA=0, SWAP_REG = 0
-#                  335 IR>: 80215002, R1=00000004, R2=00000002, Data_swapped = 00000002 swap_mux_data=fffffffe, wb_data=fffffffe, swap_reg=1, RF_WE=0 write_reg=5, RD_SEL=00, SWAP_DATA=0, SWAP_REG = 0
-#                  355 IR>: 80215002, R1=00000004, R2=00000002, Data_swapped = 00000002 swap_mux_data=fffffffe, wb_data=fffffffe, swap_reg=1, RF_WE=1 write_reg=5, RD_SEL=00, SWAP_DATA=0, SWAP_REG = 0
-#                  375 IR>: 62000000, R1=00000004, R2=00000002, Data_swapped = 00000000 swap_mux_data=00000000, wb_data=00000000, swap_reg=0, RF_WE=0 write_reg=0, RD_SEL=00, SWAP_DATA=0, SWAP_REG = 0
+#                  275 IR>: 88010004, R1=00000001, R2=00000002, R3=00000001, Data_swapped = xxxxxxxx swap_mux_data=ffffffff, wb_data=ffffffff, swap_reg=1, RF_WE=0 write_reg=00
+#                  285 IR>: 88010004, R1=00000001, R2=00000002, R3=00000001, Data_swapped = xxxxxxxx swap_mux_data=ffffffff, wb_data=ffffffff, swap_reg=1, RF_WE=0 write_reg=11
+#                  295 IR>: 88010004, R1=00000001, R2=00000002, R3=00000001, Data_swapped = xxxxxxxx swap_mux_data=00000004, wb_data=00000004, swap_reg=1, RF_WE=0 write_reg=11
+#                  305 IR>: 88010004, R1=00000004, R2=00000002, R3=00000001, Data_swapped = xxxxxxxx swap_mux_data=00000004, wb_data=00000004, swap_reg=1, RF_WE=1 write_reg=11
+#                  325 IR>: 80215002, R1=00000004, R2=00000002, R3=00000001, Data_swapped = xxxxxxxx swap_mux_data=fffffffe, wb_data=fffffffe, swap_reg=1, RF_WE=0 write_reg=11
+#                  335 IR>: 80215002, R1=00000004, R2=00000002, R3=00000001, Data_swapped = xxxxxxxx swap_mux_data=fffffffe, wb_data=fffffffe, swap_reg=1, RF_WE=0 write_reg=50
+#                  355 IR>: 80215002, R1=00000004, R2=00000002, R3=00000001, Data_swapped = xxxxxxxx swap_mux_data=fffffffe, wb_data=fffffffe, swap_reg=1, RF_WE=1 write_reg=50
+#                  375 IR>: 62000000, R1=00000004, R2=00000002, R3=00000001, Data_swapped = xxxxxxxx swap_mux_data=00000000, wb_data=00000000, swap_reg=0, RF_WE=0 write_reg=00
 # branching negative fail
-#                  425 IR>: 80536001, R1=00000004, R2=00000002, Data_swapped = fffffffe swap_mux_data=ffffffff, wb_data=ffffffff, swap_reg=3, RF_WE=0 write_reg=6, RD_SEL=00, SWAP_DATA=0, SWAP_REG = 0
-#                  455 IR>: 80536001, R1=00000004, R2=00000002, Data_swapped = fffffffe swap_mux_data=ffffffff, wb_data=ffffffff, swap_reg=3, RF_WE=1 write_reg=6, RD_SEL=00, SWAP_DATA=0, SWAP_REG = 0
-#                  475 IR>: 53000001, R1=00000004, R2=00000002, Data_swapped = 00000000 swap_mux_data=00000000, wb_data=00000000, swap_reg=0, RF_WE=0 write_reg=0, RD_SEL=00, SWAP_DATA=0, SWAP_REG = 0
+#                  425 IR>: 80536001, R1=00000004, R2=00000002, R3=00000001, Data_swapped = xxxxxxxx swap_mux_data=ffffffff, wb_data=ffffffff, swap_reg=3, RF_WE=0 write_reg=60
+#                  455 IR>: 80536001, R1=00000004, R2=00000002, R3=00000001, Data_swapped = xxxxxxxx swap_mux_data=ffffffff, wb_data=ffffffff, swap_reg=3, RF_WE=1 write_reg=60
+#                  475 IR>: 53000001, R1=00000004, R2=00000002, R3=00000001, Data_swapped = xxxxxxxx swap_mux_data=00000000, wb_data=00000000, swap_reg=0, RF_WE=0 write_reg=00
 # branching relative
-#                  505 IR>: 80124002, R1=00000004, R2=00000002, Data_swapped = 00000004 swap_mux_data=00000002, wb_data=00000002, swap_reg=2, RF_WE=0 write_reg=4, RD_SEL=00, SWAP_DATA=0, SWAP_REG = 0
-#                  535 IR>: 80124002, R1=00000004, R2=00000002, Data_swapped = 00000004 swap_mux_data=00000002, wb_data=00000002, swap_reg=2, RF_WE=1 write_reg=4, RD_SEL=00, SWAP_DATA=0, SWAP_REG = 0
-#                  555 IR>: 52000001, R1=00000004, R2=00000002, Data_swapped = 00000000 swap_mux_data=00000000, wb_data=00000000, swap_reg=0, RF_WE=0 write_reg=0, RD_SEL=00, SWAP_DATA=0, SWAP_REG = 0
+#                  505 IR>: 80124002, R1=00000004, R2=00000002, R3=00000001, Data_swapped = xxxxxxxx swap_mux_data=00000002, wb_data=00000002, swap_reg=2, RF_WE=0 write_reg=40
+#                  535 IR>: 80124002, R1=00000004, R2=00000002, R3=00000001, Data_swapped = xxxxxxxx swap_mux_data=00000002, wb_data=00000002, swap_reg=2, RF_WE=1 write_reg=40
+#                  555 IR>: 52000001, R1=00000004, R2=00000002, R3=00000001, Data_swapped = xxxxxxxx swap_mux_data=00000000, wb_data=00000000, swap_reg=0, RF_WE=0 write_reg=00
 # branching relative fail
-#                  605 IR>: 00000000, R1=00000004, R2=00000002, Data_swapped = 00000000 swap_mux_data=00000000, wb_data=00000000, swap_reg=0, RF_WE=0 write_reg=0, RD_SEL=00, SWAP_DATA=0, SWAP_REG = 0
-#                  655 IR>: 80237001, R1=00000004, R2=00000002, Data_swapped = 00000002 swap_mux_data=00000003, wb_data=00000003, swap_reg=3, RF_WE=0 write_reg=7, RD_SEL=00, SWAP_DATA=0, SWAP_REG = 0
-#                  685 IR>: 80237001, R1=00000004, R2=00000002, Data_swapped = 00000002 swap_mux_data=00000003, wb_data=00000003, swap_reg=3, RF_WE=1 write_reg=7, RD_SEL=00, SWAP_DATA=0, SWAP_REG = 0
-#                  705 IR>: 43000000, R1=00000004, R2=00000002, Data_swapped = 00000000 swap_mux_data=00000000, wb_data=00000000, swap_reg=0, RF_WE=0 write_reg=0, RD_SEL=00, SWAP_DATA=0, SWAP_REG = 0
+#                  605 IR>: 00000000, R1=00000004, R2=00000002, R3=00000001, Data_swapped = xxxxxxxx swap_mux_data=00000000, wb_data=00000000, swap_reg=0, RF_WE=0 write_reg=00
+#                  655 IR>: 80237001, R1=00000004, R2=00000002, R3=00000001, Data_swapped = xxxxxxxx swap_mux_data=00000003, wb_data=00000003, swap_reg=3, RF_WE=0 write_reg=70
+#                  685 IR>: 80237001, R1=00000004, R2=00000002, R3=00000001, Data_swapped = xxxxxxxx swap_mux_data=00000003, wb_data=00000003, swap_reg=3, RF_WE=1 write_reg=70
+#                  705 IR>: 43000000, R1=00000004, R2=00000002, R3=00000001, Data_swapped = xxxxxxxx swap_mux_data=00000000, wb_data=00000000, swap_reg=0, RF_WE=0 write_reg=00
 # branching absolute fail
-#                  755 IR>: 80537001, R1=00000004, R2=00000002, Data_swapped = fffffffe swap_mux_data=ffffffff, wb_data=ffffffff, swap_reg=3, RF_WE=0 write_reg=7, RD_SEL=00, SWAP_DATA=0, SWAP_REG = 0
-#                  785 IR>: 80537001, R1=00000004, R2=00000002, Data_swapped = fffffffe swap_mux_data=ffffffff, wb_data=ffffffff, swap_reg=3, RF_WE=1 write_reg=7, RD_SEL=00, SWAP_DATA=0, SWAP_REG = 0
-#                  805 IR>: 43000014, R1=00000004, R2=00000002, Data_swapped = 00000000 swap_mux_data=ffffffff, wb_data=ffffffff, swap_reg=0, RF_WE=0 write_reg=0, RD_SEL=00, SWAP_DATA=0, SWAP_REG = 0
+#                  755 IR>: 80537001, R1=00000004, R2=00000002, R3=00000001, Data_swapped = xxxxxxxx swap_mux_data=ffffffff, wb_data=ffffffff, swap_reg=3, RF_WE=0 write_reg=70
+#                  785 IR>: 80537001, R1=00000004, R2=00000002, R3=00000001, Data_swapped = xxxxxxxx swap_mux_data=ffffffff, wb_data=ffffffff, swap_reg=3, RF_WE=1 write_reg=70
+#                  805 IR>: 43000014, R1=00000004, R2=00000002, R3=00000001, Data_swapped = xxxxxxxx swap_mux_data=ffffffff, wb_data=ffffffff, swap_reg=0, RF_WE=0 write_reg=00
 # branching absolute
-#                  835 IR>: 00000000, R1=00000004, R2=00000002, Data_swapped = 00000000 swap_mux_data=00000000, wb_data=00000000, swap_reg=0, RF_WE=0 write_reg=0, RD_SEL=00, SWAP_DATA=0, SWAP_REG = 0
-#                  985 IR>: 18010000, R1=00000004, R2=00000002, Data_swapped = 00000000 swap_mux_data=00000004, wb_data=00000004, swap_reg=1, RF_WE=0 write_reg=0, RD_SEL=00, SWAP_DATA=0, SWAP_REG = 0
-#                  995 IR>: 18010000, R1=00000004, R2=00000002, Data_swapped = 00000000 swap_mux_data=00000004, wb_data=00000004, swap_reg=1, RF_WE=0 write_reg=1, RD_SEL=01, SWAP_DATA=0, SWAP_REG = 0
-#                 1015 IR>: 18010000, R1=00000004, R2=00000002, Data_swapped = 00000000 swap_mux_data=00aaaaaa, wb_data=00aaaaaa, swap_reg=1, RF_WE=0 write_reg=1, RD_SEL=01, SWAP_DATA=0, SWAP_REG = 0
-#                 1025 IR>: 18010000, R1=00aaaaaa, R2=00000002, Data_swapped = 00000000 swap_mux_data=00aaaaaa, wb_data=00aaaaaa, swap_reg=1, RF_WE=1 write_reg=1, RD_SEL=01, SWAP_DATA=0, SWAP_REG = 0
-#                 1035 IR>: 00000000, R1=00aaaaaa, R2=00000002, Data_swapped = 00000000 swap_mux_data=00aaaaaa, wb_data=00aaaaaa, swap_reg=0, RF_WE=1 write_reg=0, RD_SEL=01, SWAP_DATA=0, SWAP_REG = 0
-#                 1045 IR>: 00000000, R1=00aaaaaa, R2=00000002, Data_swapped = 00000000 swap_mux_data=00000000, wb_data=00000000, swap_reg=0, RF_WE=0 write_reg=0, RD_SEL=00, SWAP_DATA=0, SWAP_REG = 0
-#                 1085 IR>: 10820001, R1=00aaaaaa, R2=00000002, Data_swapped = 00000000 swap_mux_data=00000002, wb_data=00000002, swap_reg=2, RF_WE=0 write_reg=0, RD_SEL=00, SWAP_DATA=0, SWAP_REG = 0
-#                 1095 IR>: 10820001, R1=00aaaaaa, R2=00000002, Data_swapped = 00000000 swap_mux_data=00000002, wb_data=00000002, swap_reg=2, RF_WE=0 write_reg=2, RD_SEL=01, SWAP_DATA=0, SWAP_REG = 0
-#                 1105 IR>: 10820001, R1=00aaaaaa, R2=00000002, Data_swapped = 00000000 swap_mux_data=00000001, wb_data=00000001, swap_reg=2, RF_WE=0 write_reg=2, RD_SEL=01, SWAP_DATA=0, SWAP_REG = 0
-#                 1115 IR>: 10820001, R1=00aaaaaa, R2=00000002, Data_swapped = 00000000 swap_mux_data=00bbbbbb, wb_data=00bbbbbb, swap_reg=2, RF_WE=0 write_reg=2, RD_SEL=01, SWAP_DATA=0, SWAP_REG = 0
-#                 1125 IR>: 10820001, R1=00aaaaaa, R2=00bbbbbb, Data_swapped = 00000000 swap_mux_data=00bbbbbb, wb_data=00bbbbbb, swap_reg=2, RF_WE=1 write_reg=2, RD_SEL=01, SWAP_DATA=0, SWAP_REG = 0
-#                 1135 IR>: 00000000, R1=00aaaaaa, R2=00bbbbbb, Data_swapped = 00000000 swap_mux_data=00aaaaaa, wb_data=00aaaaaa, swap_reg=0, RF_WE=1 write_reg=0, RD_SEL=01, SWAP_DATA=0, SWAP_REG = 0
-#                 1145 IR>: 00000000, R1=00aaaaaa, R2=00bbbbbb, Data_swapped = 00000000 swap_mux_data=00000000, wb_data=00000000, swap_reg=0, RF_WE=0 write_reg=0, RD_SEL=00, SWAP_DATA=0, SWAP_REG = 0
-#                 1185 IR>: 30121000, R1=00aaaaaa, R2=00bbbbbb, Data_swapped = 00aaaaaa swap_mux_data=01666665, wb_data=01666665, swap_reg=2, RF_WE=0 write_reg=1, RD_SEL=00, SWAP_DATA=0, SWAP_REG = 0
-# decode
-#                 1195 IR>: 30121000, R1=00aaaaaa, R2=00bbbbbb, Data_swapped = 00aaaaaa swap_mux_data=00aaaaaa, wb_data=01666665, swap_reg=2, RF_WE=0 write_reg=2, RD_SEL=10, SWAP_DATA=0, SWAP_REG = 0
-# execute
-#                 1205 IR>: 30121000, R1=00aaaaaa, R2=00aaaaaa, Data_swapped = 00bbbbbb swap_mux_data=01666665, wb_data=01666665, swap_reg=1, RF_WE=1 write_reg=1, RD_SEL=10, SWAP_DATA=1, SWAP_REG = 1
-# mem
-#                 1215 IR>: 30121000, R1=00aaaaaa, R2=00aaaaaa, Data_swapped = 00aaaaaa swap_mux_data=00aaaaaa, wb_data=01555554, swap_reg=1, RF_WE=0 write_reg=1, RD_SEL=10, SWAP_DATA=1, SWAP_REG = 1
-# writeback
-#                 1225 IR>: 30121000, R1=00aaaaaa, R2=00aaaaaa, Data_swapped = 00aaaaaa swap_mux_data=00aaaaaa, wb_data=01555554, swap_reg=1, RF_WE=1 write_reg=1, RD_SEL=10, SWAP_DATA=1, SWAP_REG = 1
-# fetch
-#                 1235 IR>: 00000000, R1=00aaaaaa, R2=00aaaaaa, Data_swapped = 00000000 swap_mux_data=00000000, wb_data=00000000, swap_reg=0, RF_WE=0 write_reg=0, RD_SEL=10, SWAP_DATA=1, SWAP_REG = 1
-#                 1245 IR>: 00000000, R1=00aaaaaa, R2=00aaaaaa, Data_swapped = 00000000 swap_mux_data=00000000, wb_data=00000000, swap_reg=0, RF_WE=0 write_reg=0, RD_SEL=00, SWAP_DATA=1, SWAP_REG = 1
-#                 1285 IR>: 20840005, R1=00aaaaaa, R2=00aaaaaa, Data_swapped = 00000000 swap_mux_data=00000002, wb_data=00000002, swap_reg=4, RF_WE=0 write_reg=0, RD_SEL=00, SWAP_DATA=0, SWAP_REG = 0
-#                 1305 IR>: 20840005, R1=00aaaaaa, R2=00aaaaaa, Data_swapped = 00000000 swap_mux_data=00000005, wb_data=00000005, swap_reg=4, RF_WE=0 write_reg=0, RD_SEL=00, SWAP_DATA=0, SWAP_REG = 0
-#                 1335 IR>: 00000000, R1=00aaaaaa, R2=00aaaaaa, Data_swapped = 00000000 swap_mux_data=00000000, wb_data=00000000, swap_reg=0, RF_WE=0 write_reg=0, RD_SEL=00, SWAP_DATA=0, SWAP_REG = 0
-#                 1385 IR>: 28040006, R1=00aaaaaa, R2=00aaaaaa, Data_swapped = 00000000 swap_mux_data=00000000, wb_data=00000000, swap_reg=4, RF_WE=0 write_reg=0, RD_SEL=00, SWAP_DATA=0, SWAP_REG = 0
-#                 1435 IR>: 00000000, R1=00aaaaaa, R2=00aaaaaa, Data_swapped = 00000000 swap_mux_data=00000000, wb_data=00000000, swap_reg=0, RF_WE=0 write_reg=0, RD_SEL=00, SWAP_DATA=0, SWAP_REG = 0
-#                 1485 IR>: 18010005, R1=00aaaaaa, R2=00aaaaaa, Data_swapped = 00000000 swap_mux_data=00aaaaaa, wb_data=00aaaaaa, swap_reg=1, RF_WE=0 write_reg=0, RD_SEL=00, SWAP_DATA=0, SWAP_REG = 0
-#                 1495 IR>: 18010005, R1=00aaaaaa, R2=00aaaaaa, Data_swapped = 00000000 swap_mux_data=00aaaaaa, wb_data=00aaaaaa, swap_reg=1, RF_WE=0 write_reg=1, RD_SEL=01, SWAP_DATA=0, SWAP_REG = 0
-#                 1515 IR>: 18010005, R1=00aaaaaa, R2=00aaaaaa, Data_swapped = 00000000 swap_mux_data=00000002, wb_data=00000002, swap_reg=1, RF_WE=0 write_reg=1, RD_SEL=01, SWAP_DATA=0, SWAP_REG = 0
-#                 1525 IR>: 18010005, R1=00000002, R2=00aaaaaa, Data_swapped = 00000000 swap_mux_data=00000002, wb_data=00000002, swap_reg=1, RF_WE=1 write_reg=1, RD_SEL=01, SWAP_DATA=0, SWAP_REG = 0
-#                 1535 IR>: 00000000, R1=00000002, R2=00aaaaaa, Data_swapped = 00000000 swap_mux_data=00aaaaaa, wb_data=00aaaaaa, swap_reg=0, RF_WE=1 write_reg=0, RD_SEL=01, SWAP_DATA=0, SWAP_REG = 0
-#                 1545 IR>: 00000000, R1=00000002, R2=00aaaaaa, Data_swapped = 00000000 swap_mux_data=00000000, wb_data=00000000, swap_reg=0, RF_WE=0 write_reg=0, RD_SEL=00, SWAP_DATA=0, SWAP_REG = 0
-#                 1585 IR>: 18020006, R1=00000002, R2=00aaaaaa, Data_swapped = 00000000 swap_mux_data=00000000, wb_data=00000000, swap_reg=2, RF_WE=0 write_reg=0, RD_SEL=00, SWAP_DATA=0, SWAP_REG = 0
-#                 1595 IR>: 18020006, R1=00000002, R2=00aaaaaa, Data_swapped = 00000000 swap_mux_data=00000000, wb_data=00000000, swap_reg=2, RF_WE=0 write_reg=2, RD_SEL=01, SWAP_DATA=0, SWAP_REG = 0
-#                 1615 IR>: 18020006, R1=00000002, R2=00aaaaaa, Data_swapped = 00000000 swap_mux_data=00000002, wb_data=00000002, swap_reg=2, RF_WE=0 write_reg=2, RD_SEL=01, SWAP_DATA=0, SWAP_REG = 0
-#                 1625 IR>: 18020006, R1=00000002, R2=00000002, Data_swapped = 00000000 swap_mux_data=00000002, wb_data=00000002, swap_reg=2, RF_WE=1 write_reg=2, RD_SEL=01, SWAP_DATA=0, SWAP_REG = 0
-#                 1635 IR>: 00000000, R1=00000002, R2=00000002, Data_swapped = 00000000 swap_mux_data=00aaaaaa, wb_data=00aaaaaa, swap_reg=0, RF_WE=1 write_reg=0, RD_SEL=01, SWAP_DATA=0, SWAP_REG = 0
-#                 1645 IR>: 00000000, R1=00000002, R2=00000002, Data_swapped = 00000000 swap_mux_data=00000000, wb_data=00000000, swap_reg=0, RF_WE=0 write_reg=0, RD_SEL=00, SWAP_DATA=0, SWAP_REG = 0
-#                 1685 IR>: f0000000, R1=00000002, R2=00000002, Data_swapped = 00000000 swap_mux_data=00000000, wb_data=00000000, swap_reg=0, RF_WE=0 write_reg=0, RD_SEL=00, SWAP_DATA=0, SWAP_REG = 0
+#                  835 IR>: 00000000, R1=00000004, R2=00000002, R3=00000001, Data_swapped = xxxxxxxx swap_mux_data=00000000, wb_data=00000000, swap_reg=0, RF_WE=0 write_reg=00
+#                  985 IR>: 18010000, R1=00000004, R2=00000002, R3=00000001, Data_swapped = xxxxxxxx swap_mux_data=00000004, wb_data=00000004, swap_reg=1, RF_WE=0 write_reg=00
+#                  995 IR>: 18010000, R1=00000004, R2=00000002, R3=00000001, Data_swapped = xxxxxxxx swap_mux_data=00000004, wb_data=00000004, swap_reg=1, RF_WE=0 write_reg=11
+#                 1015 IR>: 18010000, R1=00000004, R2=00000002, R3=00000001, Data_swapped = xxxxxxxx swap_mux_data=00aaaaaa, wb_data=00aaaaaa, swap_reg=1, RF_WE=0 write_reg=11
+#                 1025 IR>: 18010000, R1=00aaaaaa, R2=00000002, R3=00000001, Data_swapped = xxxxxxxx swap_mux_data=00aaaaaa, wb_data=00aaaaaa, swap_reg=1, RF_WE=1 write_reg=11
+#                 1035 IR>: 00000000, R1=00aaaaaa, R2=00000002, R3=00000001, Data_swapped = xxxxxxxx swap_mux_data=00aaaaaa, wb_data=00aaaaaa, swap_reg=0, RF_WE=1 write_reg=01
+#                 1045 IR>: 00000000, R1=00aaaaaa, R2=00000002, R3=00000001, Data_swapped = xxxxxxxx swap_mux_data=00000000, wb_data=00000000, swap_reg=0, RF_WE=0 write_reg=00
+#                 1085 IR>: 10820001, R1=00aaaaaa, R2=00000002, R3=00000001, Data_swapped = xxxxxxxx swap_mux_data=00000002, wb_data=00000002, swap_reg=2, RF_WE=0 write_reg=00
+#                 1095 IR>: 10820001, R1=00aaaaaa, R2=00000002, R3=00000001, Data_swapped = xxxxxxxx swap_mux_data=00000002, wb_data=00000002, swap_reg=2, RF_WE=0 write_reg=21
+#                 1105 IR>: 10820001, R1=00aaaaaa, R2=00000002, R3=00000001, Data_swapped = xxxxxxxx swap_mux_data=00000001, wb_data=00000001, swap_reg=2, RF_WE=0 write_reg=21
+#                 1115 IR>: 10820001, R1=00aaaaaa, R2=00000002, R3=00000001, Data_swapped = xxxxxxxx swap_mux_data=00bbbbbb, wb_data=00bbbbbb, swap_reg=2, RF_WE=0 write_reg=21
+#                 1125 IR>: 10820001, R1=00aaaaaa, R2=00bbbbbb, R3=00000001, Data_swapped = xxxxxxxx swap_mux_data=00bbbbbb, wb_data=00bbbbbb, swap_reg=2, RF_WE=1 write_reg=21
+#                 1135 IR>: 00000000, R1=00aaaaaa, R2=00bbbbbb, R3=00000001, Data_swapped = xxxxxxxx swap_mux_data=00aaaaaa, wb_data=00aaaaaa, swap_reg=0, RF_WE=1 write_reg=01
+#                 1145 IR>: 00000000, R1=00aaaaaa, R2=00bbbbbb, R3=00000001, Data_swapped = xxxxxxxx swap_mux_data=00000000, wb_data=00000000, swap_reg=0, RF_WE=0 write_reg=00
+#                 1185 IR>: 30131000, R1=00aaaaaa, R2=00bbbbbb, R3=00000001, Data_swapped = xxxxxxxx swap_mux_data=00aaaaab, wb_data=00aaaaab, swap_reg=3, RF_WE=0 write_reg=10
+#                 1195 IR>: 30131000, R1=00aaaaaa, R2=00bbbbbb, R3=00000001, Data_swapped = 00aaaaaa swap_mux_data=00aaaaaa, wb_data=00aaaaab, swap_reg=3, RF_WE=0 write_reg=32
+#                 1205 IR>: 30131000, R1=00aaaaaa, R2=00bbbbbb, R3=00aaaaaa, Data_swapped = 00000001 swap_mux_data=00aaaaab, wb_data=00aaaaab, swap_reg=1, RF_WE=1 write_reg=12
+#                 1215 IR>: 30131000, R1=00aaaaaa, R2=00bbbbbb, R3=00aaaaaa, Data_swapped = 00000001 swap_mux_data=00000001, wb_data=01555554, swap_reg=1, RF_WE=0 write_reg=12
+#                 1225 IR>: 30131000, R1=00000001, R2=00bbbbbb, R3=00aaaaaa, Data_swapped = 00000001 swap_mux_data=00000001, wb_data=01555554, swap_reg=1, RF_WE=1 write_reg=12
+#                 1235 IR>: 00000000, R1=00000001, R2=00bbbbbb, R3=00aaaaaa, Data_swapped = 00000001 swap_mux_data=00000000, wb_data=00000000, swap_reg=0, RF_WE=0 write_reg=02
+#                 1245 IR>: 00000000, R1=00000001, R2=00bbbbbb, R3=00aaaaaa, Data_swapped = 00000001 swap_mux_data=00000000, wb_data=00000000, swap_reg=0, RF_WE=0 write_reg=00
+#                 1285 IR>: 20840005, R1=00000001, R2=00bbbbbb, R3=00aaaaaa, Data_swapped = 00aaaaaa swap_mux_data=00000002, wb_data=00000002, swap_reg=4, RF_WE=0 write_reg=00
+#                 1305 IR>: 20840005, R1=00000001, R2=00bbbbbb, R3=00aaaaaa, Data_swapped = 00aaaaaa swap_mux_data=00000005, wb_data=00000005, swap_reg=4, RF_WE=0 write_reg=00
+#                 1335 IR>: 00000000, R1=00000001, R2=00bbbbbb, R3=00aaaaaa, Data_swapped = 00aaaaaa swap_mux_data=00000000, wb_data=00000000, swap_reg=0, RF_WE=0 write_reg=00
+#                 1385 IR>: 28040006, R1=00000001, R2=00bbbbbb, R3=00aaaaaa, Data_swapped = 00aaaaaa swap_mux_data=00000000, wb_data=00000000, swap_reg=4, RF_WE=0 write_reg=00
+#                 1435 IR>: 00000000, R1=00000001, R2=00bbbbbb, R3=00aaaaaa, Data_swapped = 00aaaaaa swap_mux_data=00000000, wb_data=00000000, swap_reg=0, RF_WE=0 write_reg=00
+#                 1485 IR>: 18010005, R1=00000001, R2=00bbbbbb, R3=00aaaaaa, Data_swapped = 00aaaaaa swap_mux_data=00000001, wb_data=00000001, swap_reg=1, RF_WE=0 write_reg=00
+#                 1495 IR>: 18010005, R1=00000001, R2=00bbbbbb, R3=00aaaaaa, Data_swapped = 00aaaaaa swap_mux_data=00000001, wb_data=00000001, swap_reg=1, RF_WE=0 write_reg=11
+#                 1515 IR>: 18010005, R1=00000001, R2=00bbbbbb, R3=00aaaaaa, Data_swapped = 00aaaaaa swap_mux_data=00000002, wb_data=00000002, swap_reg=1, RF_WE=0 write_reg=11
+#                 1525 IR>: 18010005, R1=00000002, R2=00bbbbbb, R3=00aaaaaa, Data_swapped = 00aaaaaa swap_mux_data=00000002, wb_data=00000002, swap_reg=1, RF_WE=1 write_reg=11
+#                 1535 IR>: 00000000, R1=00000002, R2=00bbbbbb, R3=00aaaaaa, Data_swapped = 00aaaaaa swap_mux_data=00aaaaaa, wb_data=00aaaaaa, swap_reg=0, RF_WE=1 write_reg=01
+#                 1545 IR>: 00000000, R1=00000002, R2=00bbbbbb, R3=00aaaaaa, Data_swapped = 00aaaaaa swap_mux_data=00000000, wb_data=00000000, swap_reg=0, RF_WE=0 write_reg=00
+#                 1585 IR>: 18020006, R1=00000002, R2=00bbbbbb, R3=00aaaaaa, Data_swapped = 00aaaaaa swap_mux_data=00000000, wb_data=00000000, swap_reg=2, RF_WE=0 write_reg=00
+#                 1595 IR>: 18020006, R1=00000002, R2=00bbbbbb, R3=00aaaaaa, Data_swapped = 00aaaaaa swap_mux_data=00000000, wb_data=00000000, swap_reg=2, RF_WE=0 write_reg=21
+#                 1615 IR>: 18020006, R1=00000002, R2=00bbbbbb, R3=00aaaaaa, Data_swapped = 00aaaaaa swap_mux_data=00000002, wb_data=00000002, swap_reg=2, RF_WE=0 write_reg=21
+#                 1625 IR>: 18020006, R1=00000002, R2=00000002, R3=00aaaaaa, Data_swapped = 00aaaaaa swap_mux_data=00000002, wb_data=00000002, swap_reg=2, RF_WE=1 write_reg=21
+#                 1635 IR>: 00000000, R1=00000002, R2=00000002, R3=00aaaaaa, Data_swapped = 00aaaaaa swap_mux_data=00aaaaaa, wb_data=00aaaaaa, swap_reg=0, RF_WE=1 write_reg=01
+#                 1645 IR>: 00000000, R1=00000002, R2=00000002, R3=00aaaaaa, Data_swapped = 00aaaaaa swap_mux_data=00000000, wb_data=00000000, swap_reg=0, RF_WE=0 write_reg=00
+#                 1685 IR>: f0000000, R1=00000002, R2=00000002, R3=00aaaaaa, Data_swapped = 00aaaaaa swap_mux_data=00000000, wb_data=00000000, swap_reg=0, RF_WE=0 write_reg=00
 # Halt.
 # Break in Module ctrl at ctrl.v line 68
 # Stopped at ctrl.v line 68 
+# invalid command name "qut"

@@ -38,6 +38,7 @@ entity ctrl is
         DM_WE           : out    vl_logic;
         SWAP_MUX        : out    vl_logic;
         SWAP_DATA       : out    vl_logic;
-        SWAP_REG        : out    vl_logic
+        SWAP_REG        : out    vl_logic;
+        SWAP_EN         : out    vl_logic
     );
 end ctrl;
