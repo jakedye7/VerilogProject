@@ -1,0 +1,33 @@
+// 55:035 sisc processor project
+// Jacob Dye & Matt Fina
+//	all instructions being run
+//
+00000000  //00: 1st instruction nop
+8802000A  //01: 2nd instruction add immediate 10 into r[2]
+88030007  //02: 3rd instruction add immediate 7 into r[3]
+80231002  //03: 4th instruction r[1] <- r[2] - r[3]
+80101004  //04: r[1] <- ~r[1]
+80231005  //05: r[1] <- r[2] OR r[3]
+80231006  //06: r[1] <- r[2] AND r[3]
+80231007  //07: r[1] <- r[2] XOR r[3]
+88020001  //08:  load immediate 1 into r[2] for shifting
+80321008  //09:  rotate right by r[2]=1 from r[3] and store in r[1]
+80321009  //0A:  rotate left by r[2]=1 from r[3] and store in r[1]
+8032100A  //0B:  shift right by r[2]=1 from r[3] and store in r[1]
+8032100B  //0C:  shift left by r[2]=1 from r[3] and store in r[1]
+00000000  //0D:  NOP!
+30131000  //0E:  swap r1, r3; after swap r1=7, r3=e
+00000000  //0F: NOP!
+20830005  //10: store into address (imm + rs) <- rt; imm = 5, rs = r8 = 0; rt = r3=e
+28010006  //11: store into address(imm)<- rt; imm = 6; rt = r1 =7
+00000000  //12: NOP!
+18020006  //13: load address 6 into r2  using imm; imm=6 ; after r2=7
+00000000  //14: NOP!
+10810005  //15: load address 5 into r1 using rs+imm; rs = r8 = 0; imm = 5 ; after r1=e
+00000000  //16: NOP!
+88010001  //17: ADDI R1 <- R0 + (0x0000)0001 
+80112001  //18: ADD  R2 <- R1 + R1    R2=2
+80213002  //19:SUB R3 <- R2 -R1       R3=1
+6200001C  //1A:branch if (greater or equal to zero) to instruction 6. should skip nop
+00000000  //1B:
+F0000000  //1C: halt!!!

@@ -87,8 +87,6 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL, PC_SEL
 			DM_WE <= 0;
 			MM_SEL <= 0;
 	SWAP_MUX <=0;
-	//SWAP_DATA <=1;
-	//SWAP_REG <=1;
 	SWAP_EN<=0;
     end
 
@@ -97,10 +95,14 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL, PC_SEL
 		begin
 			SWAP_DATA <=0;
 			SWAP_REG <=0;
-			//SWAP_MUX <=0;
 			PC_WRITE <= 1;
 			PC_SEL <= 0;
 			PC_RST <= 0;
+			DM_WE <=0;
+			RD_SEL<=0;
+			ALU_OP <= 2'b00;
+			RF_WE<=0;
+			WB_SEL<=0;
 
 			if(OPCODE == alu_op)
 			begin
@@ -141,7 +143,6 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL, PC_SEL
    	else if(present_state == decode) 
 		begin 
 			PC_WRITE <= 0;
-			//PC_SEL <= 0; 
 			
 			if(OPCODE == alu_op)
 		 	begin
