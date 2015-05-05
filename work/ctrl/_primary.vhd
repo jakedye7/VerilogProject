@@ -12,6 +12,7 @@ entity ctrl is
         noop            : integer := 0;
         lod             : integer := 1;
         str             : integer := 2;
+        swap            : integer := 3;
         alu_op          : integer := 8;
         bra             : integer := 4;
         brr             : integer := 5;
@@ -28,12 +29,15 @@ entity ctrl is
         RF_WE           : out    vl_logic;
         \ALU_OP\        : out    vl_logic_vector(1 downto 0);
         WB_SEL          : out    vl_logic;
-        RD_SEL          : out    vl_logic;
+        RD_SEL          : out    vl_logic_vector(1 downto 0);
         PC_SEL          : out    vl_logic;
         PC_WRITE        : out    vl_logic;
         PC_RST          : out    vl_logic;
         BR_SEL          : out    vl_logic;
         MM_SEL          : out    vl_logic;
-        DM_WE           : out    vl_logic
+        DM_WE           : out    vl_logic;
+        SWAP_MUX        : out    vl_logic;
+        SWAP_DATA       : out    vl_logic;
+        SWAP_REG        : out    vl_logic
     );
 end ctrl;

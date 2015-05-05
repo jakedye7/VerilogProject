@@ -4,7 +4,8 @@ entity mux4 is
     port(
         in_a            : in     vl_logic_vector(3 downto 0);
         in_b            : in     vl_logic_vector(3 downto 0);
-        sel             : in     vl_logic;
+        in_swap         : in     vl_logic_vector(3 downto 0);
+        sel             : in     vl_logic_vector(1 downto 0);
         \out\           : out    vl_logic_vector(3 downto 0)
     );
 end mux4;

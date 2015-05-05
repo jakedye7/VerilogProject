@@ -3,7 +3,7 @@
 
 `timescale 1ns/100ps
 
-module mux4 (in_a, in_b, sel, out);
+module mux4 (in_a, in_b, in_swap, sel, out);
 
   /*
    *  4-BIT MULTIPLEXER - mux16.v
@@ -20,17 +20,20 @@ module mux4 (in_a, in_b, sel, out);
 
   input  [3:0] in_a;
   input  [3:0] in_b;
-  input         sel;
+  input  [3:0] in_swap;
+  input  [1:0] sel;
   output [3:0] out;
 
   reg   [3:0] out;
    
-  always @ (in_a, in_b, sel)
+  always @ (in_a, in_b, in_swap, sel)
   begin
-    if (sel == 1'b0)
+    if (sel == 0)
       out <= in_a;
-    else
-      out <= in_b;
+    else if(sel == 1)
+      out <= in_b;	
+    else if(sel == 2)
+	out<=in_swap;
   end
 
 endmodule 

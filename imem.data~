@@ -27,9 +27,11 @@
 00000000 //16: NOP!
 18010000 //17: load address 0 into r1  using imm; imm=0
 00000000 //18: NOP!
-10820001 //19: load address 0 into r1 using rs+imm; rs = r8 = 0; imm = 0
+10820001 //19: load address 0 into r2 using rs+imm; rs = r8 = 0; imm = 0
 00000000 //20: NOP!
-20840005 //21: store into address (imm + rs) <- rt; imm = 5, rs = r8=0;   rt = r4 = 2
+30121000 //21: SWAP r1, r2
+00000000
+20840005 //21: store into address (imm + rs) <- rt; imm = 5, rs = r8 = 0; rt = r4 = 2
 00000000 //22: NOP!
 28040006 //23: store into address(imm)<- rt; imm = 6; rt = r4 =2
 00000000 //24: NOP!

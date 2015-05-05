@@ -25,7 +25,7 @@ module sisc (CLK, RST_F);
 	wire [31:0] in_b;
 	wire [1:0] alu_op;
 	wire [3:0] stat_out;
-	wire rd_sel;
+	wire [1:0] rd_sel; //changed for swap implementation
 
 	//part 2 additions
 	wire [15:0] pc_out;
@@ -43,9 +43,30 @@ module sisc (CLK, RST_F);
 	wire [31:0] memory_out;
 	wire mm_sel;
 	wire dm_we;
-	
+	//swap additions
+	wire [31:0]data_swapped;//data coming out of swap reg into new mux
+	wire [31:0]swap_mux_data;//data coming out of swap mux into rf
+	wire [3:0]swap_reg; //swap register
+	wire swapmux;
+	wire swap_data_sel;
+	wire swap_reg_sel;
 
   // Instantiate and connect all of the components
+	mux32	swapmuxer  (.in_a		 (data_swapped),
+        	 	.in_b		 (wb_data),
+			 .sel	       	 (swapmux),
+	        	 .out          (swap_mux_data));	
+	
+	swap_data sd(.a_input(rsa),
+			.b_input(rsb), 
+			.out_sel(swap_data_sel), 
+			.data_out(data_swapped));	
+	
+	swap_reg sr(.a_input (IR[23:20]),
+			.b_input (IR[19:16]), 
+			.out_sel (swap_reg_sel), 
+			.data_out (swap_reg));	
+	
 	mux16 amux16( .in_a    	(alu_result[15:0]),
 			.in_b	(IR[15:0]),
 			.sel   	(mm_sel),
@@ -61,13 +82,14 @@ module sisc (CLK, RST_F);
 
   mux4 amux4   (.in_a        (IR[15:12]),
 			        	.in_b        (IR[19:16]),
+					.in_swap	(swap_reg),//added after swap implementation
 								.sel	       (rd_sel),
 			        	.out         (mux4_result));
 
 	rf my_rf   (.read_rega   (IR[23:20]),
 		          .read_regb   (IR[19:16]),
 		          .write_reg   (mux4_result[3:0]),
-		          .write_data  (wb_data[31:0]),
+		          .write_data  (swap_mux_data[31:0]),//wb_data before swap implementation
 		          .rf_we       (rf_we),
 		          .rsa         (rsa),
 		          .rsb         (rsb));
@@ -103,7 +125,10 @@ module sisc (CLK, RST_F);
 					.PC_RST 		 (pc_rst),
 					.BR_SEL 		 (br_sel),
 					.MM_SEL			(mm_sel),
-					.DM_WE			(dm_we));
+					.DM_WE			(dm_we),
+					.SWAP_MUX(swapmux), 
+					.SWAP_DATA(swap_data_sel), 
+					.SWAP_REG(swap_reg_sel));
 					
 	pc progcounter (.br_addr 	 (branch_address[15:0]),
 								  .pc_sel 	 (pc_sel), 
@@ -122,7 +147,9 @@ module sisc (CLK, RST_F);
                  
   initial
   begin
-    $monitor ($time,,," IR>: %h, PC=%h, R1=%h, R2=%h, R3=%h, RD_SEL=%b, ALU_OP=%b, WB_SEL=%b, RF_WE=%b, BR_SEL=%b, PC_WRITE=%b, PC_SEL=%b, DM_WE = %b, MM_SEL = %b, Memory_out = %h ", IR, pc_out, my_rf.ram_array[1], my_rf.ram_array[2], my_rf.ram_array[3], rd_sel, alu_op, wb_sel, rf_we, br_sel, pc_write, pc_sel, dm_we, mm_sel, memory_out); 
+   /* $monitor ($time,,," IR>: %h, PC=%h, R1=%h, R2=%h, R3=%h, RD_SEL=%b, ALU_OP=%b, WB_SEL=%b, RF_WE=%b, BR_SEL=%b, PC_WRITE=%b, PC_SEL=%b, DM_WE = %b, MM_SEL = %b, Memory_out = %h, Data_swapped = %h ", IR, pc_out, my_rf.ram_array[1], my_rf.ram_array[2], my_rf.ram_array[3], rd_sel, alu_op, wb_sel, rf_we, br_sel, pc_write, pc_sel, dm_we, mm_sel, memory_out, data_swapped); 
+*/
+	$monitor($time,,"IR>: %h, PC=%h, R1=%h, R2=%h, Data_swapped = %h swap_mux_data=%h, wb_data=%h, swap_reg=%h, RF_WE=%b write_reg=%h, RD_SEL=%b, SWAP_DATA=%b, SWAP_REG = %b",IR, pc_out, my_rf.ram_array[1], my_rf.ram_array[2],data_swapped, swap_mux_data, wb_data,swap_reg,rf_we,mux4_result,rd_sel, swap_data_sel, swap_reg_sel);
 	//Add=%h, STAT=%b,PC_IN=%b
 	//branch_address,stat_out,progcounter.pc_in 
   end 

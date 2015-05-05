@@ -4,20 +4,21 @@
 
 `timescale 1ns/100ps
 
-module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL, PC_SEL, PC_WRITE, PC_RST, BR_SEL, MM_SEL, DM_WE);
+module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL, PC_SEL, PC_WRITE, PC_RST, BR_SEL, MM_SEL, DM_WE, SWAP_MUX, SWAP_DATA, SWAP_REG);
   
   // inputs and outputs
   input  CLK, RST_F;
   input  [3:0] OPCODE, MM, STAT; //OPCODE = Instr[31:28], MM = Instr[27:24]
-  output reg RF_WE, WB_SEL, RD_SEL, PC_SEL, PC_WRITE, PC_RST, BR_SEL, MM_SEL, DM_WE;
+  output reg RF_WE, WB_SEL, PC_SEL, PC_WRITE, PC_RST, BR_SEL, MM_SEL, DM_WE,SWAP_MUX, SWAP_DATA, SWAP_REG;
   output reg [1:0] ALU_OP;
+  output reg [1:0] RD_SEL;
 	//control signals added for part 2 - pc_sel, pc_write, pc_rst, br_sel
 
   // states
   parameter start0 = 0, start1 = 1, fetch = 2, decode = 3, execute = 4, mem = 5, writeback = 6;
    
   // opcodes
-  parameter noop = 0, lod = 1, str = 2, alu_op = 8, bra = 4, brr = 5, bne = 6, hlt = 15;
+  parameter noop = 0, lod = 1, str = 2, swap = 3, alu_op = 8, bra = 4, brr = 5, bne = 6, hlt = 15;
 	
   // addressing modes
   parameter am_imm = 8;
@@ -85,11 +86,17 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL, PC_SEL
       BR_SEL <= 0;
 			DM_WE <= 0;
 			MM_SEL <= 0;
+	SWAP_MUX <=0;
+	SWAP_DATA <=1;
+	SWAP_REG <=1;
     end
 
   	// fetch  -----------------------------------
     if(present_state == fetch)
 		begin
+			//SWAP_DATA <=0;
+			//SWAP_REG <=0;
+			//SWAP_MUX <=0;
 			PC_WRITE <= 1;
 			PC_SEL <= 0;
 			PC_RST <= 0;
@@ -115,6 +122,17 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL, PC_SEL
 			begin	
 				BR_SEL <= 0;
 			end
+	
+			if(OPCODE == swap)
+			begin
+				RF_WE <=0;
+				BR_SEL <= 0;
+				ALU_OP <= 2'b10;
+				SWAP_MUX <=0;
+				SWAP_DATA <=1;
+				SWAP_REG <=1;
+				
+			end
 		end
 
   	// decode ----------------------------------
@@ -138,6 +156,16 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL, PC_SEL
 			begin
 				RD_SEL <= 0;
 			end
+			if(OPCODE == swap)
+			begin	
+				RD_SEL<=2'b10;
+				SWAP_MUX =1;
+				//RF_WE <=0;
+				
+				
+				
+				
+			end
 		end
 
   	// execute -------------------------------
@@ -146,7 +174,7 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL, PC_SEL
 			if(OPCODE == alu_op)
 		 	begin
 				if(MM == 4'b1000) 
-        	ALU_OP <= 2'b01;
+        				ALU_OP <= 2'b01;
 				else 
 					ALU_OP <= 2'b00;	  
 			end
@@ -211,26 +239,14 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL, PC_SEL
 				MM_SEL <= 1;
 			end
 
-			//if((OPCODE == lod) && (MM == 4'b0000))//load index and rs
-			//begin
-			//	ALU_OP <= 2'b01; //use immediate instead of rt
-			//	MM_SEL <= 0;
-			//end
-			//if((OPCODE == lod) && (MM == 4'b1000))//load just index
-			//begin
-			//	ALU_OP <= 2'b00;
-			//	MM_SEL <= 1;
-			//end
-			//if((OPCODE == str) && (MM == 4'b1000))//store into address specified by imm
-			//begin
-			//	ALU_OP <= 2'b00;
-			//	MM_SEL <= 1;
-			//end
-			//if((OPCODE == str) && ( MM == 4'b0000))//store into address specified by imm+rs
-			//begin
-			//	ALU_OP <= 2'b01;
-			//	MM_SEL <= 0;
-			//end
+			if(OPCODE==swap)
+			begin
+				RF_WE = 1;	
+
+				
+				SWAP_REG<=1'b0;
+				SWAP_DATA<=1'b0;
+			end
 		end
 
   	// mem --------------------------------------
@@ -240,14 +256,24 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL, PC_SEL
 			begin
 				RF_WE <= 1;
 			end
+
 			if(OPCODE == lod)
 			begin
 				WB_SEL <= 1;
 			end
+
 			if(OPCODE == str)
 			begin
 				RF_WE <= 0;
 				DM_WE <= 1;
+			end
+
+			if(OPCODE==swap)
+			begin
+				RF_WE=0;
+				//SWAP_REG=1;
+				//SWAP_DATA=1;
+				//RF_WE<=0;
 			end
 		end
 
@@ -262,6 +288,12 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL, PC_SEL
 			if(OPCODE == lod)
 			begin
 				RF_WE <=1;
+			end
+			if(OPCODE==swap)
+			begin
+				RF_WE=1;
+				
+				
 			end
 		end
 
