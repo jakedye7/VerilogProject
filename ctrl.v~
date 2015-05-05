@@ -87,15 +87,15 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL, PC_SEL
 			DM_WE <= 0;
 			MM_SEL <= 0;
 	SWAP_MUX <=0;
-	SWAP_DATA <=1;
-	SWAP_REG <=1;
+	//SWAP_DATA <=1;
+	//SWAP_REG <=1;
     end
 
   	// fetch  -----------------------------------
     if(present_state == fetch)
 		begin
-			//SWAP_DATA <=0;
-			//SWAP_REG <=0;
+			SWAP_DATA <=0;
+			SWAP_REG <=0;
 			//SWAP_MUX <=0;
 			PC_WRITE <= 1;
 			PC_SEL <= 0;
@@ -125,12 +125,16 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL, PC_SEL
 	
 			if(OPCODE == swap)
 			begin
+				
+				
+				$display("fetch");
 				RF_WE <=0;
 				BR_SEL <= 0;
 				ALU_OP <= 2'b10;
 				SWAP_MUX <=0;
 				SWAP_DATA <=1;
 				SWAP_REG <=1;
+
 				
 			end
 		end
@@ -158,12 +162,13 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL, PC_SEL
 			end
 			if(OPCODE == swap)
 			begin	
-				RD_SEL<=2'b10;
-				SWAP_MUX =1;
+				
 				//RF_WE <=0;
 				
-				
-				
+				$display("decode");
+				RD_SEL<=2'b10;
+				SWAP_MUX =1;
+
 				
 			end
 		end
@@ -241,11 +246,14 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL, PC_SEL
 
 			if(OPCODE==swap)
 			begin
-				RF_WE = 1;	
-
 				
-				SWAP_REG<=1'b0;
-				SWAP_DATA<=1'b0;
+				$display("execute");
+				RF_WE = 1;	
+				SWAP_MUX=0;
+				
+				SWAP_REG<=1'b1;
+				SWAP_DATA<=1'b1;				
+				
 			end
 		end
 
@@ -270,9 +278,12 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL, PC_SEL
 
 			if(OPCODE==swap)
 			begin
+				
+				$display("mem");
+				SWAP_MUX=1;
 				RF_WE=0;
-				//SWAP_REG=1;
-				//SWAP_DATA=1;
+				//SWAP_REG=1'b0;
+				//SWAP_DATA=1'b0;
 				//RF_WE<=0;
 			end
 		end
@@ -292,6 +303,10 @@ module ctrl (CLK, RST_F, OPCODE, MM, STAT, RF_WE, ALU_OP, WB_SEL, RD_SEL, PC_SEL
 			if(OPCODE==swap)
 			begin
 				RF_WE=1;
+				$display("writeback");			
+				//SWAP_REG=1'b0;
+				//SWAP_DATA=1'b0;
+				
 				
 				
 			end

@@ -23,7 +23,7 @@ input out_sel;
 output [31:0] data_out;
 reg [31:0] data_out;
 
-always @ (out_sel)
+always @ (a_input,b_input, out_sel)
 begin
 	if(out_sel == 1'b0)
 	begin

@@ -25,13 +25,13 @@ reg [31:0] data_out;
 
 always @ (a_input,b_input, out_sel)
 begin
-	if(out_sel == 1'b0)
-	begin
-		data_out <= a_input;
-	end
 	if(out_sel == 1'b1)
 	begin
 		data_out <= b_input;
+	end
+	if(out_sel == 1'b0)
+	begin
+		data_out <= a_input;
 	end
 end
 
