@@ -7,11 +7,11 @@
 88240000 //03: load second multiplicand into lsb r4=r2
 80151002 //04: START! -decrement r1
 4100000B //05: branch to end if zero flag set
-80444001 //06: r[4] <- r[4] + r[4]
+80244001 //06: r[4] <- r[2] + r[4]
 44000009 //07: branch if overflow happens
-50000004 //08: branch to start if no overflow
+60000004 //08: branch to start if no overflow
 80353001 //09: add 1 to MSB
-50000004 //0A: go back to start
+60000004 //0A: go back to start
 28040004 //0B: store LSB
 28030003 //0C: store MSB
 18010003 //0D: load address 3 into r1 - MSB (TEST if store worked and to see result)
