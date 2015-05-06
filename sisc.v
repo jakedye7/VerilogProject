@@ -150,7 +150,7 @@ module sisc (CLK, RST_F);
                  
   initial
   begin
-    $monitor ($time,,," IR>: %h, PC=%h, R1=%h, R2=%h, R3=%h, RD_SEL=%b, RF_WE=%b, BR_SEL=%b, PC_SEL=%b, DM_WE = %b, MM_SEL = %b", IR, pc_out, my_rf.ram_array[1], my_rf.ram_array[2], my_rf.ram_array[3], rd_sel, rf_we, br_sel, pc_sel, dm_we, mm_sel); 
+    $monitor ($time,,," IR>: %h, PC=%h, R1=%h, R2=%h, R3=%h, R4=%h, RD_SEL=%b, RF_WE=%b, BR_SEL=%b, PC_SEL=%b, DM_WE = %b, MM_SEL = %b", IR, pc_out, my_rf.ram_array[1], my_rf.ram_array[2], my_rf.ram_array[3], my_rf.ram_array[4], rd_sel, rf_we, br_sel, pc_sel, dm_we, mm_sel); 
 
 	/*$monitor($time,,"IR>: %h, R1=%h, R2=%h, R3=%h, Data_swapped = %h swap_mux_data=%h, wb_data=%h, swap_reg=%h, RF_WE=%b write_reg=%h",IR, my_rf.ram_array[1], my_rf.ram_array[2], my_rf.ram_array[3], data_swapped, swap_mux_data, wb_data,swap_reg,rf_we,mux4_result,rd_sel);
 */
