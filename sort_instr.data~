@@ -17,3 +17,15 @@
 //0C:
 //0D:
 F0000000 //0F: all done!
+
+
+// r5 = 1
+// START - load next number in the list into r3
+// if r2 > r3
+//   swap
+//   r5 = 0
+// else
+// 	 r2 = r3
+// end if
+// decrement r1
+// branch to START if r1 > 0
