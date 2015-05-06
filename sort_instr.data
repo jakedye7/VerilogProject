@@ -1,39 +1,36 @@
 // 55:035 SISC Project
 // 		Matt Fina and Jacob Dye
 //  	Bubble sort
-
-88000001 //00:load immediate 1 into r0 to use for decrement/increment
-88040000 //01: load 1 into r[4], address counter 1
-88050001 //02: load 2 into r[5], address counter 2
-18010000 //03: load address 0 into r1 - N (size of the list)
-18060000 //04: load address 0 into r6
-80101002 //05: dec r1
-10420000 //06: load address 1 into r2 - first number of list, using r4 adr cnter
-10530000 //07: load next address into r3 - using r5 addr cnter
-88440001 //08: increment address counter 1
-88550001 //09: increment address counter 2
-80236002 //0A: r[6] <- r2 - r3; determine if second addr is bigger than first
-43000005 //0B: branch to loading new address if r3>r2
-30232000 //0C: else swap r2, r3
-80404002 //0D: dec addr cnt1
-80505002 //0E: dec addr cnt2
-20420000 //0F: str r2 in addr cnt 1
-20530000 //10: str r3 in addr cnt 3
-88440001 //11: inc addr cnt1 back to where it was 
-88550001 //12: inc addr cnt2 back to where it was
-80108002 //13: r8 = r1 - r0; if zero flag not set, go back to start 
-61000005 //14: branch back to start if n loops has occured
-
+88090001 //00:load immediate 1 into r9 to use for decrement/increment
+88040001 //01: load 1 into r[4], address counter 1
+88050002 //02: load 2 into r[5], address counter 2
+180A0000 //03: load address 0 into r10
+18010000 //04: load address 0 into r1 - N (size of the list)
+00000000 //05: NOP! to reset
+80191001 //06: increment r1
+80A9A002 //07: dec r10
+80191002 //08: dec r1
+10420000 //09: load address 1 into r2 - first number of list, using r4 adr cnter
+10530000 //0A: load next address into r3 - using r5 addr cnter
+80494001 //0B: increment address counter 1
+80595001 //0C: increment address counter 2
+80236002 //0D: r[6] <- r2 - r3; determine if second addr is bigger than first
+43000008 //0E: branch to loading new address if r3>r2
+00000000 //0F NOP! 
+30230000 //10: else swap r2, r3
+80494002 //11: dec addr cnt1
+80595002 //12: dec addr cnt2
+20420000 //13: str r2 in addr cnt 1
+20530000 //14: str r3 in addr cnt 3
+88440001 //15: inc addr cnt1 back to where it was 
+88550001 //16: inc addr cnt2 back to where it was
+80198002 //17: r8 = r1 - r0; if zero flag not set, go back to start 
+41000008 //18: branch back to start if n loops has occured
+00000000 //19: NOP!
+80C94001 //1A: RESET address 1 counter
+80995001 //1B: RESET address 2 counter
+80A9B002 //1C: Check if outerloop is done
+61000004 //1D: branch to start of first loop if outer loop not done
+F0000000 //1E: END
 //might need to do an inner and outer loop, only 1 loop setup now
 
-//04: START - load next number in the list into r3
-//05:
-//06:
-//07: 
-80101002 //08: decrement r1
-62000000 //09: branch to START if r1 > 0
-//0A: store
-//0B: store
-//0C:
-//0D:
-F0000000 //0F: all done!

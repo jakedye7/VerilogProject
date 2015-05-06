@@ -1,31 +1,47 @@
 // 55:035 SISC Project
 // 		Matt Fina and Jacob Dye
 //  	Bubble sort
+88090001 //00:load immediate 1 into r9 to use for decrement/increment
+88040001 //01: load 1 into r[4], address counter 1
+88050002 //02: load 2 into r[5], address counter 2
+180A0000 //03: load address 0 into r10
+18010000 //04: load address 0 into r1 - N (size of the list)
+00000000 //05:
+80191001 //06:
+80A9A002 //07: dec r10
+80191002 //08: dec r1
+10420000 //09: load address 1 into r2 - first number of list, using r4 adr cnter
+10530000 //0A: load next address into r3 - using r5 addr cnter
+80494001 //0B: increment address counter 1
+80595001 //0C: increment address counter 2
+80236002 //0D: r[6] <- r2 - r3; determine if second addr is bigger than first
+43000008 //0E: branch to loading new address if r3>r2
+00000000 //0F
+30230000 //: else swap r2, r3
+80494002 //0F: dec addr cnt1
+80595002 //10: dec addr cnt2
+20420000 //11: str r2 in addr cnt 1
+20530000 //12: str r3 in addr cnt 3
+88440001 //13: inc addr cnt1 back to where it was 
+88550001 //14: inc addr cnt2 back to where it was
+80198002 //15: r8 = r1 - r0; if zero flag not set, go back to start 
+41000008 //16: branch back to start if n loops has occured
+00000000
+80C94001
+80995001
+80A9B002 //17:
+61000004 //18:
+F0000000 //19: END
+//might need to do an inner and outer loop, only 1 loop setup now
 
-18010000 //00: load address 0 into r1 - N (size of the list)
-18020001 //01: load address 1 into r2 - first number of list
-//02:
-//03:
 //04: START - load next number in the list into r3
 //05:
 //06:
 //07: 
-80151002 //08: decrement r1
-62000000 //09: branch to START if r1 > 0
+//80101002 //08: decrement r1
+//62000000 //09: branch to START if r1 > 0
 //0A: store
 //0B: store
 //0C:
 //0D:
 F0000000 //0F: all done!
-
-
-// r5 = 1
-// START - load next number in the list into r3
-// if r2 > r3
-//   swap
-//   r5 = 0
-// else
-// 	 r2 = r3
-// end if
-// decrement r1
-// branch to START if r1 > 0
