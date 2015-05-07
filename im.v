@@ -24,7 +24,7 @@ module im (read_addr, read_data);
 
   // load program
   initial begin : prog_load
-    $readmemh("sort_instr.data",ram_array);
+    $readmemh("mult_instr.data",ram_array);
   end
  
   // read process is sensitive to read address.
